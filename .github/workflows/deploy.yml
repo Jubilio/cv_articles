@@ -45,7 +45,7 @@ jobs:
 
       - name: Build MyST site
         env:
-          BASE_URL: "/"
+          BASE_URL: "/cv_articles"
         run: myst build --html
 
       - name: Copy files to HTML build
