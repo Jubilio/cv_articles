@@ -1,5 +1,3 @@
-* col1col2col3
-
 ---
 title: "Mapeamento de Zonas Potenciais de Águas Subterrâneas em Mueda"
 exports:
@@ -7,9 +5,11 @@ exports:
     template: lapreprint-typst
     output: groundwater_mueda.pdf
 ---
+
 # Mapeamento de Zonas Potenciais de Águas Subterrâneas no Distrito de Mueda, Norte de Moçambique: Integração de Sensoriamento Remoto, AHP em SIG e Validação com Fontes de Água
 
-**Autor:** Jubílio Filiano Maússe*Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
+**Autor:** Jubílio Filiano Maússe  
+*Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
 
 > **Nota de independência institucional:** Este estudo foi desenvolvido de forma independente pelo autor. As opiniões, análises e conclusões apresentadas são da exclusiva responsabilidade do autor e não representam oficialmente a REACH Initiative, a Universidade Eduardo Mondlane ou qualquer outra instituição.
 
@@ -19,7 +19,7 @@ As águas subterrâneas constituem uma fonte estratégica para o abastecimento d
 
 **Palavras-chave:** águas subterrâneas; potencial hidrogeológico; sensoriamento remoto; SIG; AHP; Mueda; Cabo Delgado; Moçambique; fontes de água.
 
----
+***
 
 ## Abstract
 
@@ -27,7 +27,7 @@ Groundwater is a strategic water supply source in regions with limited surface w
 
 **Keywords:** groundwater potential; hydrogeological potential; remote sensing; GIS; AHP; Mueda; Cabo Delgado; Mozambique; water points.
 
----
+***
 
 ## 1. Introdução
 
@@ -43,7 +43,6 @@ Apesar da importância das águas subterrâneas para o abastecimento de água em
 A principal questão que orienta o estudo é: *Até que ponto a integração de Sensoriamento Remoto, SIG e Análise Multicritério permite identificar zonas favoráveis à ocorrência de águas subterrâneas no distrito de Mueda?*
 
 ### 1.2 Hipóteses
-
 - **H1:** As zonas de maior potencial de águas subterrâneas em Mueda estão associadas a maior disponibilidade de precipitação, litologias favoráveis, maior índice topográfico de humidade, densidade de drenagem adequada e presença de lineamentos estruturais que favorecem a infiltração e circulação subterrânea.
 - **H2:** A integração de Sensoriamento Remoto, SIG e AHP permite produzir um mapa mais detalhado e operacional do que mapas provinciais generalizados.
 - **H3:** O mapa gerado apresenta correspondência espacial significativa com a localização de fontes de água existentes.
@@ -54,12 +53,12 @@ O presente estudo foi realizado no distrito de Mueda, localizado na província d
 
 Do ponto de vista administrativo e geográfico, Mueda limita-se a norte com a República Unida da Tanzânia, a sul com os distritos de Montepuez, Muidumbe e Meluco, a este com o distrito de Mocímboa da Praia e a oeste com o distrito de Mecula, na província do Niassa. O distrito é constituído por vários postos administrativos, incluindo Mueda-Sede, Chapa, Negomano, N'gapa e Imbuho, o que permite uma abordagem espacialmente detalhada para o mapeamento do potencial de águas subterrâneas [@ine2024mueda].
 
-```{figure} ../../img/mapa_area_estudo.png
+```{figure} ../../img/Mueda_GW.png
 :name: fig-area-estudo
 :align: center
 :width: 85%
 
-Mapa da área de estudo no distrito de Mueda, Cabo Delgado, Moçambique.
+Localização do distrito de Mueda, Cabo Delgado, Moçambique.
 ```
 
 ## 3. Materiais e métodos
@@ -80,15 +79,15 @@ $$
 
 Onde $\lambda_{max}$ é o maior autovalor da matriz de comparação, $n$ é o número de critérios e $RI$ é o índice aleatório. Neste estudo, a matriz AHP foi composta por sete critérios e a razão de consistência obtida foi de **0,100**.
 
-| Factor condicionante             | Peso AHP (%) |
-| :------------------------------- | :----------- |
-| Precipitação                   | 34,3         |
-| Geologia                         | 21,7         |
-| Índice Topográfico de Humidade | 15,0         |
-| Densidade de drenagem            | 8,9          |
-| Densidade de lineamentos         | 8,1          |
-| Uso e cobertura da terra         | 6,8          |
-| Tipo de solo                     | 5,2          |
+| Factor condicionante | Peso AHP (%) |
+| :--- | :--- |
+| Precipitação | 34,3 |
+| Geologia | 21,7 |
+| Índice Topográfico de Humidade | 15,0 |
+| Densidade de drenagem | 8,9 |
+| Densidade de lineamentos | 8,1 |
+| Uso e cobertura da terra | 6,8 |
+| Tipo de solo | 5,2 |
 
 ### 3.2 Integração das camadas e geração do índice GWPZ
 
@@ -109,47 +108,39 @@ Para apoiar a interpretação do mapa final, foram produzidos mapas intermediár
 ::::{grid} 1 2 2 2
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_precipitacao.png
 :name: fig-precipitacao
 :width: 100%
 
 Precipitação.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_dem.png
 :name: fig-dem
 :width: 100%
 
 Modelo Digital de Elevação.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_twi.png
 :name: fig-twi
 :width: 100%
 
 Índice Topográfico de Humidade.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_drenagem.png
 :name: fig-drenagem
 :width: 100%
 
 Densidade de drenagem.
 ```
-
 :::
 
 ::::
@@ -157,54 +148,46 @@ Densidade de drenagem.
 ::::{grid} 1 2 2 2
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_geologia.png
 :name: fig-geologia
 :width: 100%
 
 Geologia.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_solo.png
 :name: fig-solo
 :width: 100%
 
 Tipo de solo.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_lineamentos.png
 :name: fig-lineamentos
 :width: 100%
 
 Densidade de lineamentos.
 ```
-
 :::
 
 :::{card}
-
-```{figure}
+```{figure} ../../img/mapa_lulc.png
 :name: fig-lulc
 :width: 100%
 
 Uso e cobertura da terra.
 ```
-
 :::
 
 ::::
 
 ### 4.2 Mapa final de zonas potenciais de águas subterrâneas
 
-```{figure}
+```{figure} ../../img/Mueda_GW.png
 :name: fig-mapa-final-gwpz
 :align: center
 :width: 95%
@@ -213,15 +196,14 @@ Mapa final de zonas potenciais de águas subterrâneas no distrito de Mueda, Cab
 ```
 
 ### 4.3 Distribuição Espacial
-
 O mapa final de zonas potenciais de águas subterrâneas resultou em quatro classes observadas no distrito. A distribuição espacial mostra que Mueda é dominado pelas classes de baixo e moderado potencial.
 
 | Classe de potencial | Área (ha) | Percentagem (%) |
-| :------------------ | :--------- | :-------------- |
-| Muito baixo         | 22,72      | 0,002           |
-| Baixo               | 601.833,01 | 53,70           |
-| Moderado            | 474.064,49 | 42,30           |
-| Alto                | 44.723,01  | 3,99            |
+| :--- | :--- | :--- |
+| Muito baixo | 22,72 | 0,002 |
+| Baixo | 601.833,01 | 53,70 |
+| Moderado | 474.064,49 | 42,30 |
+| Alto | 44.723,01 | 3,99 |
 
 ## 5. Discussão
 
@@ -231,6 +213,6 @@ A sobreposição dos 17 pontos de água com o mapa final mostrou que estas infra
 
 ## 6. Conclusão
 
-O presente estudo demonstrou a utilidade da integração de Sensoriamento Remoto, SIG e AHP para o mapeamento hidrogeológico. Os resultados reforçam que a disponibilidade climática de recarga (precipitação), as características litológicas (geologia) e a topografia (TWI) são os grandes condicionadores em Mueda.
+O presente estudo demonstrou a utilidade da integração de Sensoriamento Remoto, SIG e AHP para o mapeamento hidrogeológico. Os resultados reforçam que a disponibilidade climática de recarga (precipitação), as características litológicas (geologia) e a topografia (TWI) são os grandes condicionadores em Mueda. 
 
 O mapa produzido constitui uma ferramenta útil para apoio à decisão, orientando a identificação preliminar de áreas para investigação geofísica e planeamento de recursos hídricos. No entanto, o modelo deve ser utilizado como um instrumento de triagem espacial e não substitui levantamentos hidrogeológicos de detalhe em campo.

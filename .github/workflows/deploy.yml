@@ -36,16 +36,22 @@ jobs:
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
-      - name: Build PDF
+      - name: Build PDF and CV
         run: |
           pip install -r requirements.txt
           python build_pdf.py
+          python generate_cv.py
+          python generate_rss.py
 
       - name: Build MyST site
         run: myst build --html
 
-      - name: Copy PDF to HTML build
-        run: cp groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf || true
+      - name: Copy files to HTML build
+        run: |
+          cp groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf || true
+          cp public/cv.pdf _build/html/cv.pdf || true
+          cp rss.xml _build/html/rss.xml || true
+          cp atom.xml _build/html/atom.xml || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

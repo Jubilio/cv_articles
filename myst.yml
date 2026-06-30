@@ -42,6 +42,8 @@ project:
         - file: pages/tutoriais/r_kobo.md
     - file: pages/projectos/portfolio.md
     - file: pages/publicacoes.md
+    - file: pages/blog.md
+    - file: blog/primeiro-post.md
     - file: pages/contactos.md
 
 site:
@@ -55,6 +57,8 @@ site:
         url: /
       - title: Sobre Mim
         url: /pages/sobre
+      - title: Blog
+        url: /pages/blog
       - title: Artigos
         url: /pages/artigos/
       - title: Mapas GIS

@@ -1,4 +1,10 @@
 # Add any Python dependencies required by Jupyter execution or your build scripts here.
 # For example:
-# pandas
-# matplotlib
+feedgen
+ghp-import
+jupyter-book
+jupytext
+matplotlib
+mystmd
+numpy
+pyyaml

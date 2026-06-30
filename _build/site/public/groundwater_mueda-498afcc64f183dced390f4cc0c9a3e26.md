@@ -54,12 +54,12 @@ O presente estudo foi realizado no distrito de Mueda, localizado na província d
 
 Do ponto de vista administrativo e geográfico, Mueda limita-se a norte com a República Unida da Tanzânia, a sul com os distritos de Montepuez, Muidumbe e Meluco, a este com o distrito de Mocímboa da Praia e a oeste com o distrito de Mecula, na província do Niassa. O distrito é constituído por vários postos administrativos, incluindo Mueda-Sede, Chapa, Negomano, N'gapa e Imbuho, o que permite uma abordagem espacialmente detalhada para o mapeamento do potencial de águas subterrâneas [@ine2024mueda].
 
-```{figure} ../../img/mapa_area_estudo.png
+```{figure}
 :name: fig-area-estudo
 :align: center
 :width: 85%
 
-Mapa da área de estudo no distrito de Mueda, Cabo Delgado, Moçambique.
+Localização do distrito de Mueda, Cabo Delgado, Moçambique.
 ```
 
 ## 3. Materiais e métodos

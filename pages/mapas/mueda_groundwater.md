@@ -1,14 +1,13 @@
 ---
 title: "Mapa de Águas Subterrâneas em Mueda"
 ---
-
 # Mapa: Potencial de Águas Subterrâneas em Mueda
 
 Este mapa é o produto final da modelação espacial documentada no meu [artigo técnico](../artigos/groundwater_mueda.md).
 
 ## O Mapa
 
-```{image} ../../img/Mueda_GW.png
+```{image}
 :alt: Mapa de Zonas Potenciais de Águas Subterrâneas - Mueda
 :width: 100%
 :align: center
