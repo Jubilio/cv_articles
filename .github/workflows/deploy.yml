@@ -44,6 +44,8 @@ jobs:
           python generate_rss.py
 
       - name: Build MyST site
+        env:
+          BASE_URL: "/"
         run: myst build --html
 
       - name: Copy files to HTML build
