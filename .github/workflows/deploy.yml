@@ -33,8 +33,19 @@ jobs:
       - name: Install MyST Markdown
         run: npm install -g mystmd
 
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Build PDF
+        run: |
+          pip install -r requirements.txt
+          python build_pdf.py
+
       - name: Build MyST site
         run: myst build --html
+
+      - name: Copy PDF to HTML build
+        run: cp groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

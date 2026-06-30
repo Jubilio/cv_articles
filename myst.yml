@@ -20,6 +20,8 @@ project:
       github: Jubilio
   github: https://github.com/Jubilio
   license: CC-BY-4.0
+  bibliography:
+    - references.bib
   toc:
     - file: index.md
     - file: pages/sobre.md
