@@ -34,7 +34,7 @@ jobs:
         run: npm install -g mystmd
 
       - name: Setup Typst
-        uses: typst-community/setup-typst@v3
+        uses: typst-community/setup-typst@v5
 
       - name: Build PDF and CV
         run: |
