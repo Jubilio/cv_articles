@@ -1,0 +1,68 @@
+version: 1
+project:
+  title: Jubílio Filiano Maússe
+  subtitle: GIS · Remote Sensing · MEAL · Data Analysis
+  description: >
+    Portefólio académico e profissional de Jubílio Filiano Maússe — GIS Officer na ACTED/IMPACT
+    especializado em dados geoespaciais, sensoriamento remoto e análise humanitária.
+  keywords:
+    - GIS
+    - Remote Sensing
+    - MEAL
+    - Moçambique
+    - Humanitarian
+    - Data Analysis
+    - ArcGIS
+    - QGIS
+  authors:
+    - name: Jubílio Filiano Maússe
+      email: jubiliomausse5@gmail.com
+      github: Jubilio
+  github: https://github.com/Jubilio
+  license: CC-BY-4.0
+  toc:
+    - file: index.md
+    - file: pages/sobre.md
+    - title: Artigos
+      children:
+        - file: pages/artigos/index.md
+        - file: pages/artigos/groundwater_mueda.md
+    - title: Mapas & Análises GIS
+      children:
+        - file: pages/mapas/index.md
+        - file: pages/mapas/mueda_groundwater.md
+        - file: pages/mapas/cabo_delgado_rrm.md
+    - title: Tutoriais Técnicos
+      children:
+        - file: pages/tutoriais/index.md
+        - file: pages/tutoriais/arcgis.md
+        - file: pages/tutoriais/qgis.md
+        - file: pages/tutoriais/r_kobo.md
+    - file: pages/projectos/portfolio.md
+    - file: pages/publicacoes.md
+    - file: pages/contactos.md
+
+site:
+  template: book-theme
+  options:
+    favicon: img/Perfile_Mausse.png
+    logo: img/Perfile_Mausse.png
+    logo_text: Jubílio Maússe
+    nav:
+      - title: Início
+        url: /
+      - title: Sobre Mim
+        url: /pages/sobre
+      - title: Artigos
+        url: /pages/artigos/
+      - title: Mapas GIS
+        url: /pages/mapas/
+      - title: Tutoriais
+        url: /pages/tutoriais/
+      - title: Portefólio
+        url: /pages/projectos/portfolio
+      - title: Contactos
+        url: /pages/contactos
+    actions:
+      - title: Ver no GitHub
+        url: https://github.com/Jubilio
