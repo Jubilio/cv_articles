@@ -110,7 +110,7 @@ Para apoiar a interpretação do mapa final, foram produzidos mapas intermediár
 
 :::{card}
 
-```{figure} ../../img/mapa_precipitacao.png
+```{figure}
 :name: fig-precipitacao
 :width: 100%
 
@@ -121,7 +121,7 @@ Precipitação.
 
 :::{card}
 
-```{figure} ../../img/mapa_dem.png
+```{figure}
 :name: fig-dem
 :width: 100%
 
@@ -132,7 +132,7 @@ Modelo Digital de Elevação.
 
 :::{card}
 
-```{figure} ../../img/mapa_twi.png
+```{figure}
 :name: fig-twi
 :width: 100%
 
@@ -143,7 +143,7 @@ Modelo Digital de Elevação.
 
 :::{card}
 
-```{figure} ../../img/mapa_drenagem.png
+```{figure}
 :name: fig-drenagem
 :width: 100%
 
@@ -158,7 +158,7 @@ Densidade de drenagem.
 
 :::{card}
 
-```{figure} ../../img/mapa_geologia.png
+```{figure}
 :name: fig-geologia
 :width: 100%
 
@@ -169,7 +169,7 @@ Geologia.
 
 :::{card}
 
-```{figure} ../../img/mapa_solo.png
+```{figure}
 :name: fig-solo
 :width: 100%
 
@@ -180,7 +180,7 @@ Tipo de solo.
 
 :::{card}
 
-```{figure} ../../img/mapa_lineamentos.png
+```{figure}
 :name: fig-lineamentos
 :width: 100%
 
@@ -191,7 +191,7 @@ Densidade de lineamentos.
 
 :::{card}
 
-```{figure} ../../img/mapa_lulc.png
+```{figure}
 :name: fig-lulc
 :width: 100%
 
@@ -204,7 +204,7 @@ Uso e cobertura da terra.
 
 ### 4.2 Mapa final de zonas potenciais de águas subterrâneas
 
-```{figure} ../../img/Mueda_GW.png
+```{figure}
 :name: fig-mapa-final-gwpz
 :align: center
 :width: 95%
