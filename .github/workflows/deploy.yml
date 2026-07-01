@@ -76,24 +76,26 @@ jobs:
 
       - name: Copy static files and rewrite CV URL to stable path
         run: |
+          set -e
+
           # Copy CV PDF
           if [ -f cv.pdf ]; then
             cp cv.pdf ./_build/html/cv.pdf
           fi
 
-          # Article PDF (copy to repository-root accessible path for GitHub Pages)
+          # Article PDF (copy into the published site root so the relative link resolves)
           if [ -f _build/exports/groundwater_mueda.pdf ]; then
             mkdir -p ./_build/html/articles
             cp _build/exports/groundwater_mueda.pdf ./_build/html/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf
-            echo "Copied groundwater_mueda.pdf to /articles/"
+            echo "Copied groundwater_mueda.pdf to ./_build/html/articles/"
           else
             echo "WARNING: groundwater_mueda.pdf not found, skipping"
           fi
-          
+
           # Copy RSS Feeds
           cp rss.xml  ./_build/html/rss.xml  2>/dev/null || true
           cp atom.xml ./_build/html/atom.xml 2>/dev/null || true
-          
+
           # Rewrite hashed CV URL to stable /cv.pdf path (just in case)
           find ./_build/html -name "*.html" -exec sed -i 's|/build/cv-[a-f0-9]\{20,\}\.pdf|/cv.pdf|g' {} \;
 
