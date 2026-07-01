@@ -1,9 +1,6 @@
 ---
-title: "Blog"
+title: "📰 Blog & Notícias"
 ---
-
-# 📰 Blog & Notícias
-
 Esta secção contém reflexões curtas, atualizações sobre missões de terreno e pensamentos soltos sobre a aplicação de tecnologias GIS no setor humanitário.
 
 [Assinar o Feed RSS](../rss.xml)
