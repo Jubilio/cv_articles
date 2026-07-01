@@ -1,5 +1,3 @@
-* col1col2col3
-
 ---
 title: "Mapeamento de Zonas Potenciais de Águas Subterrâneas em Mueda"
 exports:
@@ -10,6 +8,8 @@ exports:
 # Mapeamento de Zonas Potenciais de Águas Subterrâneas no Distrito de Mueda, Norte de Moçambique: Integração de Sensoriamento Remoto, AHP em SIG e Validação com Fontes de Água
 
 **Autor:** Jubílio Filiano Maússe*Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
+
+[📥 **Descarregar Artigo Completo em PDF**](groundwater_mueda.pdf)
 
 > **Nota de independência institucional:** Este estudo foi desenvolvido de forma independente pelo autor. As opiniões, análises e conclusões apresentadas são da exclusiva responsabilidade do autor e não representam oficialmente a REACH Initiative, a Universidade Eduardo Mondlane ou qualquer outra instituição.
 
