@@ -81,11 +81,11 @@ jobs:
             cp cv.pdf ./_build/html/cv.pdf
           fi
 
-          # Article PDF (copied to stable path by build_pdf.py)
+          # Article PDF (copy to repository-root accessible path for GitHub Pages)
           if [ -f _build/exports/groundwater_mueda.pdf ]; then
-            mkdir -p ./_build/html/pages/artigos
-            cp _build/exports/groundwater_mueda.pdf ./_build/html/pages/artigos/groundwater_mueda.pdf
-            echo "Copied groundwater_mueda.pdf"
+            mkdir -p ./_build/html/articles
+            cp _build/exports/groundwater_mueda.pdf ./_build/html/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf
+            echo "Copied groundwater_mueda.pdf to /articles/"
           else
             echo "WARNING: groundwater_mueda.pdf not found, skipping"
           fi

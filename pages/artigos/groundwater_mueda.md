@@ -7,7 +7,7 @@ exports:
 ---
 ## Mapeamento de Zonas Potenciais de Águas Subterrâneas no Distrito de Mueda, Norte de Moçambique: Integração de Sensoriamento Remoto, AHP em SIG e Validação com Fontes de Água
 
-**Autor:** Jubílio Filiano Maússe*Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
+**Autor:** Jubílio Filiano Maússe | *Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
 
 [📥 **Descarregar Artigo Completo em PDF**](groundwater_mueda.pdf)
 
@@ -54,7 +54,7 @@ O presente estudo foi realizado no distrito de Mueda, localizado na província d
 
 Do ponto de vista administrativo e geográfico, Mueda limita-se a norte com a República Unida da Tanzânia, a sul com os distritos de Montepuez, Muidumbe e Meluco, a este com o distrito de Mocímboa da Praia e a oeste com o distrito de Mecula, na província do Niassa. O distrito é constituído por vários postos administrativos, incluindo Mueda-Sede, Chapa, Negomano, N'gapa e Imbuho, o que permite uma abordagem espacialmente detalhada para o mapeamento do potencial de águas subterrâneas [@ine2024mueda].
 
-```{figure} ../../img/mapa_area_estudo.png
+```{figure}
 :name: fig-area-estudo
 :align: center
 :width: 85%
@@ -76,14 +76,14 @@ O processamento foi realizado com as seguintes ferramentas:
 
 Os dados utilizados incluem:
 
-| Dado                         | Fonte                       | Resolução / Escala |
-| :--------------------------- | :-------------------------- | :----------------- |
-| SRTM DEM                     | NASA / USGS                 | 30 m               |
-| Imagens Sentinel-2 / Landsat | Google Earth Engine         | 10–30 m            |
-| Precipitação (CHIRPS)        | UCSB Climate Hazards Group  | ~5 km              |
-| Geologia                     | Carta Geológica 1:1.000.000 | 1:1.000.000        |
-| Tipo de solo                 | SoilGrids / FAO             | 250 m              |
-| Pontos de água (SINAS)       | DNA — Moçambique            | Pontual            |
+| Dado                         | Fonte                        | Resolução / Escala |
+| :--------------------------- | :--------------------------- | :------------------- |
+| SRTM DEM                     | NASA / USGS                  | 30 m                 |
+| Imagens Sentinel-2 / Landsat | Google Earth Engine          | 10–30 m             |
+| Precipitação (CHIRPS)      | UCSB Climate Hazards Group   | ~5 km                |
+| Geologia                     | Carta Geológica 1:1.000.000 | 1:1.000.000          |
+| Tipo de solo                 | SoilGrids / FAO              | 250 m                |
+| Pontos de água (SINAS)      | DNA — Moçambique           | Pontual              |
 
 ### 3.2 Atribuição de pesos pelo Processo Analítico Hierárquico
 
@@ -101,9 +101,9 @@ Onde $\lambda_{max}$ é o maior autovalor da matriz de comparação, $n$ é o n�
 
 | Factor condicionante             | Peso AHP (%) |
 | :------------------------------- | :----------- |
-| Precipitação                     | 34,3         |
+| Precipitação                   | 34,3         |
 | Geologia                         | 21,7         |
-| Índice Topográfico de Humidade   | 15,0         |
+| Índice Topográfico de Humidade | 15,0         |
 | Densidade de drenagem            | 8,9          |
 | Densidade de lineamentos         | 8,1          |
 | Uso e cobertura da terra         | 6,8          |
@@ -129,7 +129,7 @@ Para apoiar a interpretação do mapa final, foram produzidos mapas intermediár
 
 :::{card}
 
-```{figure} ../../img/mapa_precipitacao.png
+```{figure}
 :name: fig-precipitacao
 :width: 100%
 
@@ -140,7 +140,7 @@ Precipitação.
 
 :::{card}
 
-```{figure} ../../img/mapa_dem.png
+```{figure}
 :name: fig-dem
 :width: 100%
 
@@ -151,7 +151,7 @@ Modelo Digital de Elevação.
 
 :::{card}
 
-```{figure} ../../img/mapa_twi.png
+```{figure}
 :name: fig-twi
 :width: 100%
 
@@ -162,7 +162,7 @@ Modelo Digital de Elevação.
 
 :::{card}
 
-```{figure} ../../img/mapa_drenagem.png
+```{figure}
 :name: fig-drenagem
 :width: 100%
 
@@ -177,7 +177,7 @@ Densidade de drenagem.
 
 :::{card}
 
-```{figure} ../../img/mapa_geologia.png
+```{figure}
 :name: fig-geologia
 :width: 100%
 
@@ -188,7 +188,7 @@ Geologia.
 
 :::{card}
 
-```{figure} ../../img/mapa_solo.png
+```{figure}
 :name: fig-solo
 :width: 100%
 
@@ -199,7 +199,7 @@ Tipo de solo.
 
 :::{card}
 
-```{figure} ../../img/mapa_lineamentos.png
+```{figure}
 :name: fig-lineamentos
 :width: 100%
 
@@ -210,7 +210,7 @@ Densidade de lineamentos.
 
 :::{card}
 
-```{figure} ../../img/mapa_lulc.png
+```{figure}
 :name: fig-lulc
 :width: 100%
 
@@ -223,7 +223,7 @@ Uso e cobertura da terra.
 
 ### 4.2 Mapa final de zonas potenciais de águas subterrâneas
 
-```{figure} ../../img/Mueda_GW.png
+```{figure}
 :name: fig-mapa-final-gwpz
 :align: center
 :width: 95%
@@ -235,7 +235,7 @@ Mapa final de zonas potenciais de águas subterrâneas no distrito de Mueda, Cab
 
 O mapa final de zonas potenciais de águas subterrâneas resultou em quatro classes observadas no distrito. A distribuição espacial mostra que Mueda é dominado pelas classes de baixo e moderado potencial.
 
-| Classe de potencial | Área (ha)  | Percentagem (%) |
+| Classe de potencial | Área (ha) | Percentagem (%) |
 | :------------------ | :--------- | :-------------- |
 | Muito baixo         | 22,72      | 0,002           |
 | Baixo               | 601.833,01 | 53,70           |
