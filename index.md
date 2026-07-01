@@ -1,5 +1,5 @@
 ---
-title: Jubílio Filiano Maússe — GIS, Remote Sensing & MEAL
+title: Jubílio Filiano Maússe — GIS, Remote Sensing, Data Analyst & MEAL
 description: >
   Portefólio profissional de Jubílio Filiano Maússe, GIS Officer na ACTED/IMPACT.
   Especializado em dados geoespaciais, sensoriamento remoto e análise humanitária em Moçambique.
