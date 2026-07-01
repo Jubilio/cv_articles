@@ -189,4 +189,3 @@ def create_cv_typ():
 
 if __name__ == "__main__":
     create_cv_typ()
-    build_pdf()
