@@ -4,7 +4,7 @@ date: 2026-07-01
 authors:
   - name: Jubílio Filiano Maússe
 tags: [GEE, Remote Sensing, Machine Learning, Moçambique, Land Cover]
-thumbnail: img/Mueda_GW.png
+thumbnail: ../img/banhine/lulc_banhine.png
 ---
 
 # Classificação de Uso e Cobertura do Solo com Machine Learning no Google Earth Engine
