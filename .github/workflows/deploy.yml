@@ -1,14 +1,11 @@
-# ╔═══════════════════════════════════════════════════════════════╗
-# ║  Deploy MyST Portfolio to GitHub Pages                       ║
-# ║  Builds: HTML site + CV PDF (Typst) + Article PDF + RSS     ║
-# ╚═══════════════════════════════════════════════════════════════╝
-
 name: Deploy MyST Site to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
-  workflow_dispatch:           # Allow manual trigger from GitHub UI
+    branches:
+      - main
+      - master
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,94 +17,89 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      # ── 1. Checkout repository ──────────────────────────────
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # ── 2. Setup runtimes ───────────────────────────────────
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v4
-
-      # ── 3. Install tools ────────────────────────────────────
-      - name: Install MyST Markdown
-        run: npm install -g mystmd
-
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt
-
-      # ── 4. Generate CV PDF from Markdown pages ──────────────
-      - name: Generate CV (Typst)
-        run: |
-          python generate_cv.py
-          echo "--- cv.typ preview (first 20 lines) ---"
-          head -20 cv.typ
-
-      # ── 5. Generate Article PDF (groundwater_mueda) ─────────
-      - name: Generate Article PDF
-        run: python build_pdf.py
-
-      # ── 6. Generate RSS/Atom feeds from blog posts ─────────
-      - name: Generate RSS feeds
-        run: python generate_rss.py
-
-      # ── 7. Build the MyST HTML site ─────────────────────────
-      - name: Build MyST site
-        run: myst build --html
-
-      # ── 8. Copy generated assets into the HTML build ────────
-      - name: Copy assets to _build/html
-        run: |
-          # CV PDF
-          if [ -f cv.pdf ]; then
-            cp cv.pdf _build/html/cv.pdf
-            echo "Copied cv.pdf"
-          else
-            echo "WARNING: cv.pdf not found, skipping"
-          fi
-
-          # Article PDF
-          if [ -f pages/artigos/groundwater_mueda.pdf ]; then
-            cp pages/artigos/groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf
-            echo "Copied groundwater_mueda.pdf"
-          elif [ -f _build/exports/groundwater_mueda.pdf ]; then
-            cp _build/exports/groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf
-            echo "Copied groundwater_mueda.pdf from exports"
-          fi
-
-          # RSS / Atom feeds
-          cp rss.xml  _build/html/rss.xml  2>/dev/null && echo "Copied rss.xml"  || true
-          cp atom.xml _build/html/atom.xml 2>/dev/null && echo "Copied atom.xml" || true
-
-          echo "--- Final _build/html root contents ---"
-          ls -la _build/html/
-
-      # ── 9. Upload to GitHub Pages artifact ──────────────────
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build/html"
-
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Download fonts
+        run: |
+          mkdir -p fonts
+          # Source Sans Pro (body font)
+          curl -sL "https://github.com/adobe-fonts/source-sans-pro/releases/download/3.006R/source-sans-pro-3.006R.zip" -o source-sans-pro.zip
+          unzip -o source-sans-pro.zip -d /tmp/ssp
+          cp /tmp/ssp/source-sans-pro-3.006R/OTF/*.otf fonts/
+          # Font Awesome 6 (icons)
+          curl -sL "https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip" -o fa.zip
+          unzip -o fa.zip -d /tmp/fa
+          cp /tmp/fa/fontawesome-free-6.7.2-desktop/otfs/*.otf fonts/
+
+      - name: Generate CV Typst source
+        run: python generate_cv.py
+
+      - name: Compile CV PDF
+        run: typst compile cv.typ cv.pdf --font-path ./fonts --ignore-system-fonts
+
+      - name: Build Article PDF (Groundwater Mueda)
+        run: python build_pdf.py
+
+      - name: Build HTML Assets
+        env:
+          BASE_URL: /${{ github.event.repository.name }}
+        run: myst build --html
+
+      - name: Generate RSS and Atom feeds
+        run: python generate_rss.py
+
+      - name: Copy static files and rewrite CV URL to stable path
+        run: |
+          # Copy CV PDF
+          if [ -f cv.pdf ]; then
+            cp cv.pdf ./_build/html/cv.pdf
+          fi
+
+          # Copy Article PDF
+          if [ -f pages/artigos/groundwater_mueda.pdf ]; then
+            cp pages/artigos/groundwater_mueda.pdf ./_build/html/pages/artigos/groundwater_mueda.pdf
+          elif [ -f _build/exports/groundwater_mueda.pdf ]; then
+            cp _build/exports/groundwater_mueda.pdf ./_build/html/pages/artigos/groundwater_mueda.pdf
+          fi
+
+          # Copy RSS Feeds
+          cp rss.xml  ./_build/html/rss.xml  2>/dev/null || true
+          cp atom.xml ./_build/html/atom.xml 2>/dev/null || true
+          
+          # Rewrite hashed CV URL to stable /cv.pdf path (just in case)
+          find ./_build/html -name "*.html" -exec sed -i 's|/build/cv-[a-f0-9]\{20,\}\.pdf|/cv.pdf|g' {} \;
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./_build/html"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
