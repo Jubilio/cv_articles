@@ -154,7 +154,7 @@ def gen_preamble() -> str:
   #v(0.3em)
   #text(size: 9pt, fill: rgb("#555555"))[
     {a["address"]} \\
-    ✉ {a["email"]}  ·  ☎ {a["phone"]} \\
+    ✉ #link("mailto:{a['email']}")[{a['email']}]  ·  ☎ {a["phone"]} \\
     🌐 {a["homepage"]}  ·  GitHub: {a["github"]}  ·  LinkedIn: {a["linkedin"]}
   ]
 ]

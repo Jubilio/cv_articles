@@ -38,7 +38,7 @@
   #v(0.3em)
   #text(size: 9pt, fill: rgb("#555555"))[
     Pemba, Cabo Delgado, Moçambique \
-    ✉ jubiliomausse5@gmail.com  ·  ☎ +258 84 451 8764 \
+    ✉ #link("mailto:jubiliomausse5@gmail.com")[jubiliomausse5@gmail.com]  ·  ☎ +258 84 451 8764 \
     🌐 jubiliomausse.github.io  ·  GitHub: Jubilio  ·  LinkedIn: jubilio-mausse
   ]
 ]
