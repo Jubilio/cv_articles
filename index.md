@@ -4,10 +4,9 @@ description: >
   Portefólio profissional de Jubílio Filiano Maússe, GIS Officer na ACTED/IMPACT.
   Especializado em dados geoespaciais, sensoriamento remoto e análise humanitária em Moçambique.
 ---
-
 # Bem-vindo ao Meu Portefólio
 
-```{image} img/Perfile_Mausse.png
+```{image}
 :alt: Jubílio Filiano Maússe
 :width: 180px
 :align: right
@@ -43,22 +42,22 @@ Publicação de análises técnicas sobre recursos hídricos, vulnerabilidade e 
 Integração de sensoriamento remoto, AHP em SIG e validação com fontes de água no distrito
 de Mueda, Norte de Moçambique.
 
-```{image} img/Mueda_GW.png
+```{image}
 :alt: Mapa de zonas potenciais de águas subterrâneas em Mueda
 :width: 100%
 ```
 
-[Ler o artigo →](pages/artigos/groundwater_mueda.md) &nbsp;&nbsp; [Descarregar PDF](https://jubilio.github.io/cv_articles/public/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
+[Ler o artigo →](pages/artigos/groundwater_mueda.md) &nbsp;&nbsp; [Descarregar PDF](https://jubilio.github.io/cv_articles/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
 ::::
 
 ## Navegação Rápida
 
-| Secção | Conteúdo |
-|--------|----------|
-| [Sobre Mim](pages/sobre.md) | Biografia, formação e competências |
-| [Artigos](pages/artigos/index.md) | Manuscritos e publicações técnicas |
-| [Mapas GIS](pages/mapas/index.md) | Cartografia e análise geoespacial |
-| [Tutoriais](pages/tutoriais/index.md) | ArcGIS, QGIS, R, KoBoToolbox |
-| [Portefólio](pages/projectos/portfolio.md) | Projectos completados |
-| [Publicações](pages/publicacoes.md) | Lista completa de outputs |
-| [Contactos](pages/contactos.md) | Como entrar em contacto |
+| Secção                                   | Conteúdo                             |
+| ------------------------------------------ | ------------------------------------- |
+| [Sobre Mim](pages/sobre.md)                 | Biografia, formação e competências |
+| [Artigos](pages/artigos/index.md)           | Manuscritos e publicações técnicas |
+| [Mapas GIS](pages/mapas/index.md)           | Cartografia e análise geoespacial    |
+| [Tutoriais](pages/tutoriais/index.md)       | ArcGIS, QGIS, R, KoBoToolbox          |
+| [Portefólio](pages/projectos/portfolio.md) | Projectos completados                 |
+| [Publicações](pages/publicacoes.md)       | Lista completa de outputs             |
+| [Contactos](pages/contactos.md)             | Como entrar em contacto               |
