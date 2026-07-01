@@ -63,7 +63,7 @@ jobs:
       - name: Compile CV PDF
         run: typst compile cv.typ cv.pdf --font-path ./fonts --ignore-system-fonts
 
-      - name: Build Article PDF (Groundwater Mueda)
+      - name: Publish static article PDF from public assets
         run: python build_pdf.py
 
       - name: Build HTML Assets
