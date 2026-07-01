@@ -50,23 +50,22 @@
 
 Sou _Jubílio Filiano Maússe_, um profissional de Gestão de Informação e Sistemas de Informação Geográfica (SIG) sediado em Pemba, Moçambique. O meu trabalho foca-se em apoiar operações humanitárias, resposta a emergências, rastreio de deslocamentos, sistemas de monitorização e tomada de decisões baseadas em evidências.
 Tenho uma vasta experiência em integração de dados geoespaciais e humanitários, gestão de grandes conjuntos de dados, desenvolvimento de dashboards operacionais, mapeamento de vulnerabilidades baseados em SIG, e apoio à coordenação humanitária através da centralização de dados e monitorização de situações.
-📥 Descarregar o meu Currículo (PDF)
 
-== 🎯 Competências Core
+== Competências Core
   - _Gestão de Informação Humanitária_ (Centralização de Dados e Monitorização de Situações)
   - _SIG & Análise Espacial_ (Mapeamento de Vulnerabilidades, Sensoriamento Remoto)
   - _MEAL & Qualidade de Dados_ (Sistemas de Monitorização, _Data Quality Assurance_)
   - _Resposta a Emergências_ (Rastreio de Deslocamentos)
   - _Capacitação_ (Capacity Building) e _Desenvolvimento de Dashboards_
 
-== 💻 Competências Técnicas
+== Competências Técnicas
   - ArcGIS Pro, QGIS, Google Earth Engine, Mapbox, GDAL
   - KoBoToolbox, ODK, Kobo REST API
   - Python (GeoPandas, Pandas, NumPy), R, SQL
   - PostgreSQL
   - Power BI, Tableau, Plotly, Advanced Excel
 
-== 💼 Experiência Profissional
+== Experiência Profissional
 
 === Senior Data & GIS Officer | ACTED / REACH Initiative
 _Ago 2025 – Presente_
@@ -86,18 +85,18 @@ _2023 – 2024_
 _2024_
   - Gestão de conjuntos de dados geoespaciais e produção de mapeamento para monitorização de conservação.
 
-== 🎓 Educação
+== Educação
 _Licenciatura em Ciência de Informação Geográfica (BSc)_
 Universidade Eduardo Mondlane (2019 – 2023)
 
-== 📜 Certificações
+== Certificações
   - Advanced Monitoring & Evaluation (FIELD)
   - Introduction to MEAL
   - Spatial Data Science with Python
   - Spatial Data Science with R
   - Geospatial Data Analysis & Remote Sensing
 
-== 🌍 Línguas
+== Línguas
   - _Português:_ Nativo
   - _Inglês:_ Fluente
 

@@ -1,0 +1,26 @@
+# Build output
+_build/
+public/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env/
+
+# Generated files (rebuilt by CI)
+cv.typ
+cv.pdf
+rss.xml
+atom.xml
+groundwater_mueda.pdf
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Typst fonts (downloaded by CI)
+fonts/

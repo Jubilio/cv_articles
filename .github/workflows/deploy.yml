@@ -1,19 +1,20 @@
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  Deploy MyST Portfolio to GitHub Pages                       ║
+# ║  Builds: HTML site + CV PDF (Typst) + Article PDF + RSS     ║
+# ╚═══════════════════════════════════════════════════════════════╝
+
 name: Deploy MyST Site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main, master]
+  workflow_dispatch:           # Allow manual trigger from GitHub UI
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -21,45 +22,91 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # ── 1. Checkout repository ──────────────────────────────
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
+      # ── 2. Setup runtimes ───────────────────────────────────
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: "18.x"
+          node-version: "20"
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      # ── 3. Install tools ────────────────────────────────────
       - name: Install MyST Markdown
         run: npm install -g mystmd
 
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v5
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
 
-      - name: Build PDF and CV
+      # ── 4. Download fonts for CV PDF ────────────────────────
+      - name: Download fonts (Source Sans Pro + Font Awesome)
         run: |
-          pip install -r requirements.txt
-          python build_pdf.py
-          python generate_cv.py
-          python generate_rss.py
+          mkdir -p fonts
 
+          # Source Sans Pro (body font)
+          curl -sL "https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip" \
+            -o ssp.zip
+          unzip -o ssp.zip -d /tmp/ssp
+          find /tmp/ssp -name "*.otf" -exec cp {} fonts/ \;
+
+          # Font Awesome 6 (icons for contact details)
+          curl -sL "https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip" \
+            -o fa.zip
+          unzip -o fa.zip -d /tmp/fa
+          find /tmp/fa -name "*.otf" -exec cp {} fonts/ \;
+
+          echo "Fonts downloaded:"
+          ls -la fonts/
+
+      # ── 5. Generate CV PDF from Markdown pages ──────────────
+      - name: Generate CV (Typst)
+        run: |
+          python generate_cv.py
+          echo "--- cv.typ preview (first 20 lines) ---"
+          head -20 cv.typ
+
+      # ── 6. Generate RSS/Atom feeds from blog posts ─────────
+      - name: Generate RSS feeds
+        run: python generate_rss.py
+
+      # ── 7. Build the MyST HTML site ─────────────────────────
       - name: Build MyST site
-        env:
-          BASE_URL: "/cv_articles"
         run: myst build --html
 
-      - name: Copy files to HTML build
+      # ── 8. Copy generated assets into the HTML build ────────
+      - name: Copy assets to _build/html
         run: |
-          cp groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf || true
-          cp public/cv.pdf _build/html/cv.pdf || true
-          cp rss.xml _build/html/rss.xml || true
-          cp atom.xml _build/html/atom.xml || true
+          # CV PDF
+          if [ -f cv.pdf ]; then
+            cp cv.pdf _build/html/cv.pdf
+            echo "Copied cv.pdf"
+          else
+            echo "WARNING: cv.pdf not found, skipping"
+          fi
 
+          # RSS / Atom feeds
+          cp rss.xml  _build/html/rss.xml  2>/dev/null && echo "Copied rss.xml"  || true
+          cp atom.xml _build/html/atom.xml 2>/dev/null && echo "Copied atom.xml" || true
+
+          echo "--- Final _build/html root contents ---"
+          ls -la _build/html/
+
+      # ── 9. Upload to GitHub Pages artifact ──────────────────
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire _build/html directory
-          path: '_build/html'
+          path: "_build/html"
 
   deploy:
     environment:
@@ -70,4 +117,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4

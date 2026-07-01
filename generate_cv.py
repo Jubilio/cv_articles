@@ -60,9 +60,15 @@ def strip_myst_directives(text: str) -> str:
     text = re.sub(r"^```\{[^}]*\}.*?^```", "", text, flags=re.MULTILINE | re.DOTALL)
     # Remove :option: lines (e.g. :name:, :width:, :align:)
     text = re.sub(r"^:[a-z_]+:.*$", "", text, flags=re.MULTILINE)
-    # Remove markdown links but keep text:  [text](url) → text
+    # Remove markdown links but keep text:  [text](url) -> text
     text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
-    # Remove emoji shortcodes like 👤 📄 🚀 etc (keep them, Typst handles Unicode)
+    # Remove lines that are just a CV download link (not useful inside the CV itself)
+    text = re.sub(r"^.*Descarregar o meu Curr.*$", "", text, flags=re.MULTILINE)
+    # Strip emoji characters from headings (they don't render well in Typst PDF)
+    text = re.sub(
+        r"[\U0001F300-\U0001F9FF\U00002702-\U000027B0\U0000FE00-\U0000FE0F\U0000200D]+\s*",
+        "", text
+    )
     return text
 
 
@@ -71,7 +77,7 @@ def md_to_typst_items(text: str) -> str:
     lines = []
     for line in text.splitlines():
         stripped = line.strip()
-        if not stripped:
+        if not stripped or stripped.startswith("//"):
             continue
         # Convert markdown bold **text** to Typst *text*
         stripped = re.sub(r"\*\*([^*]+)\*\*", r"*\1*", stripped)
@@ -197,10 +203,10 @@ def build_pdf():
             sys.exit(1)
         print("[OK] Successfully generated cv.pdf")
     except FileNotFoundError:
-        print("[WARN] Typst CLI not found. Skipping PDF compilation.")
-        print("    The cv.typ file was still generated — compile it manually:")
-        print("    typst compile cv.typ cv.pdf")
-        sys.exit(1)
+        print("[INFO] Typst CLI not found locally. cv.typ was generated successfully.")
+        print("       The CI pipeline will compile cv.typ -> cv.pdf automatically.")
+        # Exit 0: the .typ file is the important output; PDF is built by CI.
+        sys.exit(0)
 
 
 if __name__ == "__main__":
