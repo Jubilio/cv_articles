@@ -49,32 +49,16 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      # ── 4. Download fonts for CV PDF ────────────────────────
-      - name: Download fonts (Source Sans Pro + Font Awesome)
-        run: |
-          mkdir -p fonts
-
-          # Source Sans Pro (body font)
-          curl -sL "https://github.com/adobe-fonts/source-sans/releases/download/3.052R/OTF-source-sans-3.052R.zip" \
-            -o ssp.zip
-          unzip -o ssp.zip -d /tmp/ssp
-          find /tmp/ssp -name "*.otf" -exec cp {} fonts/ \;
-
-          # Font Awesome 6 (icons for contact details)
-          curl -sL "https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip" \
-            -o fa.zip
-          unzip -o fa.zip -d /tmp/fa
-          find /tmp/fa -name "*.otf" -exec cp {} fonts/ \;
-
-          echo "Fonts downloaded:"
-          ls -la fonts/
-
-      # ── 5. Generate CV PDF from Markdown pages ──────────────
+      # ── 4. Generate CV PDF from Markdown pages ──────────────
       - name: Generate CV (Typst)
         run: |
           python generate_cv.py
           echo "--- cv.typ preview (first 20 lines) ---"
           head -20 cv.typ
+
+      # ── 5. Generate Article PDF (groundwater_mueda) ─────────
+      - name: Generate Article PDF
+        run: python build_pdf.py
 
       # ── 6. Generate RSS/Atom feeds from blog posts ─────────
       - name: Generate RSS feeds
@@ -93,6 +77,15 @@ jobs:
             echo "Copied cv.pdf"
           else
             echo "WARNING: cv.pdf not found, skipping"
+          fi
+
+          # Article PDF
+          if [ -f pages/artigos/groundwater_mueda.pdf ]; then
+            cp pages/artigos/groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf
+            echo "Copied groundwater_mueda.pdf"
+          elif [ -f _build/exports/groundwater_mueda.pdf ]; then
+            cp _build/exports/groundwater_mueda.pdf _build/html/pages/artigos/groundwater_mueda.pdf
+            echo "Copied groundwater_mueda.pdf from exports"
           fi
 
           # RSS / Atom feeds
