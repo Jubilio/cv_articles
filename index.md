@@ -48,7 +48,7 @@ de Mueda, Norte de Moçambique.
 :width: 100%
 ```
 
-[Ler o artigo →](pages/artigos/groundwater_mueda.md) &nbsp;&nbsp; [Descarregar PDF](/cv_articles/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
+[Ler o artigo →](pages/artigos/groundwater_mueda.md) &nbsp;&nbsp; [Descarregar PDF](https://jubilio.github.io/cv_articles/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
 ::::
 
 ## Navegação Rápida

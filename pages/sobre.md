@@ -8,7 +8,7 @@ Sou **Jubílio Filiano Maússe**, um profissional de Gestão de Informação e S
 
 Tenho uma vasta experiência em integração de dados geoespaciais e humanitários, gestão de grandes conjuntos de dados, desenvolvimento de dashboards operacionais, mapeamento de vulnerabilidades baseados em SIG, e apoio à coordenação humanitária através da centralização de dados e monitorização de situações.
 
-[📥 Descarregar o meu Currículo (PDF)](/cv.pdf)
+[📥 Descarregar o meu Currículo (PDF)](https://jubilio.github.io/cv_articles/cv.pdf)
 
 ## 🎯 Competências Core
 

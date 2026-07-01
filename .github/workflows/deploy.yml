@@ -87,7 +87,8 @@ jobs:
           if [ -f _build/exports/groundwater_mueda.pdf ]; then
             mkdir -p ./_build/html/articles
             cp _build/exports/groundwater_mueda.pdf ./_build/html/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf
-            echo "Copied groundwater_mueda.pdf to ./_build/html/articles/"
+            cp _build/exports/groundwater_mueda.pdf ./_build/html/groundwater_mueda.pdf
+            echo "Copied groundwater_mueda.pdf to ./_build/html/articles/ and ./_build/html/"
           else
             echo "WARNING: groundwater_mueda.pdf not found, skipping"
           fi
