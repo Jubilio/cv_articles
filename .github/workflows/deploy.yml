@@ -81,13 +81,15 @@ jobs:
             cp cv.pdf ./_build/html/cv.pdf
           fi
 
-          # Copy Article PDF
-          if [ -f pages/artigos/groundwater_mueda.pdf ]; then
-            cp pages/artigos/groundwater_mueda.pdf ./_build/html/pages/artigos/groundwater_mueda.pdf
-          elif [ -f _build/exports/groundwater_mueda.pdf ]; then
+          # Article PDF (copied to stable path by build_pdf.py)
+          if [ -f _build/exports/groundwater_mueda.pdf ]; then
+            mkdir -p ./_build/html/pages/artigos
             cp _build/exports/groundwater_mueda.pdf ./_build/html/pages/artigos/groundwater_mueda.pdf
+            echo "Copied groundwater_mueda.pdf"
+          else
+            echo "WARNING: groundwater_mueda.pdf not found, skipping"
           fi
-
+          
           # Copy RSS Feeds
           cp rss.xml  ./_build/html/rss.xml  2>/dev/null || true
           cp atom.xml ./_build/html/atom.xml 2>/dev/null || true
