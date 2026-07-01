@@ -67,8 +67,6 @@ jobs:
         run: python build_pdf.py
 
       - name: Build HTML Assets
-        env:
-          BASE_URL: /${{ github.event.repository.name }}
         run: myst build --html
 
       - name: Generate RSS and Atom feeds

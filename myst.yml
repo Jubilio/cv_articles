@@ -47,6 +47,7 @@ project:
     - file: pages/contactos.md
 
 site:
+  url: https://jubilio.github.io/cv_articles
   template: book-theme
   options:
     favicon: img/Perfile_Mausse.png
