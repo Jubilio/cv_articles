@@ -9,7 +9,7 @@ exports:
 
 **Autor:** Jubílio Filiano Maússe | *Investigador Independente | Oficial Sénior de Dados e GIS, REACH Initiative, Moçambique*
 
-[📥 **Descarregar Artigo Completo em PDF**](https://jubilio.github.io/cv_articles/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
+[📥 **Descarregar Artigo Completo em PDF**](articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
 
 > **Nota de independência institucional:** Este estudo foi desenvolvido de forma independente pelo autor. As opiniões, análises e conclusões apresentadas são da exclusiva responsabilidade do autor e não representam oficialmente a REACH Initiative, a Universidade Eduardo Mondlane ou qualquer outra instituição.
 
