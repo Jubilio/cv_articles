@@ -7,7 +7,7 @@ Este mapa é o produto final da modelação espacial documentada no meu [artigo 
 
 ## O Mapa
 
-```{image}
+```{image} ../../img/Mueda_GW.png
 :alt: Mapa de Zonas Potenciais de Águas Subterrâneas - Mueda
 :width: 100%
 :align: center

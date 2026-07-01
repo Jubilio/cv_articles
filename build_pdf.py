@@ -21,11 +21,20 @@ def build_pdf():
         print(f"File {target_md} not found.")
         sys.exit(1)
 
-    result = subprocess.run(["myst", "build", "--pdf", target_md], capture_output=False)
+    result = subprocess.run(["myst", "build", "--typst", target_md], capture_output=False)
     
     if result.returncode != 0:
-        print("Error building PDF.")
+        print("Error exporting Typst from MyST.")
         sys.exit(result.returncode)
+        
+    typst_file = os.path.join("_build", "exports", "groundwater_mueda.typ")
+    pdf_file = os.path.join("_build", "exports", "groundwater_mueda.pdf")
+    
+    result2 = subprocess.run(["typst", "compile", typst_file, pdf_file], capture_output=False)
+    
+    if result2.returncode != 0:
+        print("Error compiling PDF from Typst.")
+        sys.exit(result2.returncode)
 
     print("PDF build successful.")
 

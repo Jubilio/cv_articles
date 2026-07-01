@@ -3,9 +3,9 @@
 ---
 title: "Mapeamento de Zonas Potenciais de Águas Subterrâneas em Mueda"
 exports:
-  - format: pdf
-    template: lapreprint-typst
-    output: groundwater_mueda.pdf
+  - format: typst
+    template: default
+    output: groundwater_mueda.typ
 ---
 # Mapeamento de Zonas Potenciais de Águas Subterrâneas no Distrito de Mueda, Norte de Moçambique: Integração de Sensoriamento Remoto, AHP em SIG e Validação com Fontes de Água
 
