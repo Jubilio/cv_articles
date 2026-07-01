@@ -12,12 +12,12 @@ Esta secção contém reflexões curtas, atualizações sobre missões de terren
 
 ::::{grid} 1 1 2 2
 
-:::{card} Primeiro Post do Blog: GIS e Acção Humanitária
-**Data:** 30 Junho 2026
+:::{card} Classificação LULC com GEE: Parque Nacional do Banhine
+**Data:** 01 Julho 2026
 
-Bem-vindo ao meu novo site! Aqui irei detalhar as minhas experiências com Avaliações Rápidas de Necessidades (RNA) e muito mais.
+Um guia completo passo a passo de como usar o Google Earth Engine e Machine Learning (CART) para mapear o uso do solo.
 
 +++
-[Ler mais](../blog/primeiro-post.md)
+[Ler Artigo ➔](../blog/gee-banhine-lulc.md)
 :::
 ::::

@@ -43,7 +43,6 @@ project:
     - file: pages/projectos/portfolio.md
     - file: pages/publicacoes.md
     - file: pages/blog.md
-    - file: blog/primeiro-post.md
     - file: blog/gee-banhine-lulc.md
     - file: pages/contactos.md
 
