@@ -59,6 +59,8 @@ Do ponto de vista administrativo e geográfico, Mueda limita-se a norte com a Re
 :align: center
 :width: 85%
 
+![Mapa da área de estudo no distrito de Mueda](../../img/mapa_area_estudo.png)
+
 Mapa da área de estudo no distrito de Mueda, Cabo Delgado, Moçambique.
 ```
 
@@ -133,6 +135,8 @@ Para apoiar a interpretação do mapa final, foram produzidos mapas intermediár
 :name: fig-precipitacao
 :width: 100%
 
+![Precipitação](../../img/mapa_precipitacao.png)
+
 Precipitação.
 ```
 
@@ -143,6 +147,8 @@ Precipitação.
 ```{figure}
 :name: fig-dem
 :width: 100%
+
+![Modelo Digital de Elevação](../../img/mapa_dem.png)
 
 Modelo Digital de Elevação.
 ```
@@ -155,6 +161,8 @@ Modelo Digital de Elevação.
 :name: fig-twi
 :width: 100%
 
+![Índice Topográfico de Humidade](../../img/mapa_twi.png)
+
 Índice Topográfico de Humidade.
 ```
 
@@ -165,6 +173,8 @@ Modelo Digital de Elevação.
 ```{figure}
 :name: fig-drenagem
 :width: 100%
+
+![Densidade de drenagem](../../img/mapa_drenagem.png)
 
 Densidade de drenagem.
 ```
@@ -181,6 +191,8 @@ Densidade de drenagem.
 :name: fig-geologia
 :width: 100%
 
+![Geologia](../../img/mapa_geologia.png)
+
 Geologia.
 ```
 
@@ -191,6 +203,8 @@ Geologia.
 ```{figure}
 :name: fig-solo
 :width: 100%
+
+![Tipo de solo](../../img/mapa_solo.png)
 
 Tipo de solo.
 ```
@@ -203,6 +217,8 @@ Tipo de solo.
 :name: fig-lineamentos
 :width: 100%
 
+![Densidade de lineamentos](../../img/mapa_lineamentos.png)
+
 Densidade de lineamentos.
 ```
 
@@ -213,6 +229,8 @@ Densidade de lineamentos.
 ```{figure}
 :name: fig-lulc
 :width: 100%
+
+![Uso e cobertura da terra](../../img/mapa_lulc.png)
 
 Uso e cobertura da terra.
 ```
@@ -227,6 +245,8 @@ Uso e cobertura da terra.
 :name: fig-mapa-final-gwpz
 :align: center
 :width: 95%
+
+![Mapa final de zonas potenciais de águas subterrâneas](../../img/Mueda_GW.png)
 
 Mapa final de zonas potenciais de águas subterrâneas no distrito de Mueda, Cabo Delgado, com sobreposição dos 17 pontos de água utilizados para validação espacial.
 ```
