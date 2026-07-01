@@ -66,7 +66,28 @@ Mapa da área de estudo no distrito de Mueda, Cabo Delgado, Moçambique.
 
 A metodologia adoptada baseia-se na integração de dados de Sensoriamento Remoto, Sistemas de Informação Geográfica, mapas convencionais e dados de validação de fontes de água para a identificação de zonas de potencial de águas subterrâneas.
 
-### 3.1 Atribuição de pesos pelo Processo Analítico Hierárquico
+### 3.1 Dados e Software
+
+O processamento foi realizado com as seguintes ferramentas:
+
+- **Google Earth Engine (GEE):** Plataforma de computação em nuvem utilizada para aquisição e pré-processamento de imagens de satélite (Sentinel-2, Landsat), cálculo do índice LULC e extracção de dados de precipitação (CHIRPS). O GEE permitiu processar grandes volumes de dados de detecção remota sem necessidade de armazenamento local.
+- **ArcGIS Pro:** Software SIG utilizado para a análise espacial principal, incluindo a geração e reclassificação das camadas condicionantes (DEM/SRTM, densidade de drenagem, densidade de lineamentos, geologia, tipo de solo), aplicação da álgebra de mapas, sobreposição ponderada AHP e produção da cartografia final.
+- **Microsoft Excel:** Utilizado para o cálculo da matriz AHP, determinação dos pesos dos critérios e verificação da razão de consistência (CR = 0,100).
+
+Os dados utilizados incluem:
+
+| Dado                         | Fonte                     | Resolução / Escala |
+| :--------------------------- | :------------------------ | :----------------- |
+| SRTM DEM                     | NASA / USGS               | 30 m               |
+| Imagens Sentinel-2 / Landsat | Google Earth Engine       | 10–30 m            |
+| Precipitação (CHIRPS)        | UCSB Climate Hazards Group| ~5 km              |
+| Geologia                     | Carta Geológica 1:1.000.000 | 1:1.000.000      |
+| Tipo de solo                 | SoilGrids / FAO           | 250 m              |
+| Pontos de água (SINAS)       | DNA — Moçambique          | Pontual            |
+
+
+
+### 3.2 Atribuição de pesos pelo Processo Analítico Hierárquico
 
 A consistência da matriz foi avaliada por meio do índice de consistência (CI) e da razão de consistência (CR), calculados pelas seguintes fórmulas:
 
@@ -90,7 +111,7 @@ Onde $\lambda_{max}$ é o maior autovalor da matriz de comparação, $n$ é o n�
 | Uso e cobertura da terra         | 6,8          |
 | Tipo de solo                     | 5,2          |
 
-### 3.2 Integração das camadas e geração do índice GWPZ
+### 3.3 Integração das camadas e geração do índice GWPZ
 
 O índice de zonas de potencial de águas subterrâneas (GWPZ) foi calculado pela equação:
 

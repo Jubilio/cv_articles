@@ -15,7 +15,7 @@ Este mapa é o produto final da modelação espacial documentada no meu [artigo 
 
 ## Detalhes Técnicos
 
-- **Ferramentas utilizadas:** QGIS, Google Earth Engine, R (para análise estatística prévia).
+- **Ferramentas utilizadas:** Google Earth Engine, ArcGIS Pro, QGIS, Microsoft Excel.
 - **Dados Base:**
   - SRTM DEM (Declive, TWI, Densidade de Drenagem).
   - Imagens Sentinel-2 / Landsat (Uso e Ocupação do Solo).
