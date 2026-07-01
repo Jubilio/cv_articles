@@ -5,14 +5,30 @@ import shutil
 from pathlib import Path
 
 
+def resolve_command(cmd):
+    resolved = shutil.which(cmd)
+    if resolved:
+        return resolved
+
+    for candidate in [f"{cmd}.cmd", f"{cmd}.exe", f"{cmd}.bat"]:
+        resolved = shutil.which(candidate)
+        if resolved:
+            return resolved
+
+    return None
+
+
 def check_command(cmd, name):
-    if shutil.which(cmd) is None:
+    if resolve_command(cmd) is None:
         print(f"Error: {name} ('{cmd}') is not installed or not on PATH.")
         sys.exit(1)
 
 
 def build_pdf():
+    myst_cmd = resolve_command("myst")
+    typst_cmd = resolve_command("typst")
     check_command("myst", "MyST")
+    check_command("typst", "Typst")
 
     target_md = Path("pages") / "artigos" / "groundwater_mueda.md"
 
@@ -21,9 +37,8 @@ def build_pdf():
         sys.exit(1)
 
     print("Building Article PDF via MyST + Typst...")
-    # myst build --typst handles both export AND compilation internally
     result = subprocess.run(
-        ["myst", "build", "--typst", str(target_md)],
+        [myst_cmd, "build", "--typst", str(target_md)],
         capture_output=False,
     )
 
@@ -31,21 +46,34 @@ def build_pdf():
         print("Error: myst build --typst failed.")
         sys.exit(result.returncode)
 
-    # MyST outputs the PDF to a hashed temp path; find it under _build/exports/
+    typst_candidates = [
+        Path("pages") / "artigos" / "groundwater_mueda.typ",
+        Path("pages") / "artigos" / "groundwater-mueda.typ",
+    ]
+    typst_source = next((p for p in typst_candidates if p.exists()), None)
+
+    if typst_source is None:
+        print("Error: generated Typst file was not found.")
+        sys.exit(1)
+
     exports_dir = Path("_build") / "exports"
-    pdf_candidates = list(exports_dir.rglob("groundwater-mueda.pdf"))
-
-    if not pdf_candidates:
-        print("Warning: groundwater-mueda.pdf not found under _build/exports/ — skipping copy.")
-        return
-
-    # Use the most recently modified one (in case of multiple builds)
-    src_pdf = max(pdf_candidates, key=lambda p: p.stat().st_mtime)
-
-    # Copy to a stable, well-known path used by deploy.yml
+    exports_dir.mkdir(parents=True, exist_ok=True)
     dest_pdf = exports_dir / "groundwater_mueda.pdf"
-    shutil.copy2(src_pdf, dest_pdf)
-    print(f"PDF build successful: {src_pdf} -> {dest_pdf}")
+
+    compile_cmd = [typst_cmd, "compile", str(typst_source), str(dest_pdf)]
+    if Path("fonts").exists():
+        compile_cmd.extend(["--font-path", "./fonts"])
+
+    compile_result = subprocess.run(compile_cmd, capture_output=False)
+    if compile_result.returncode != 0:
+        print("Error: typst compile failed.")
+        sys.exit(compile_result.returncode)
+
+    if not dest_pdf.exists():
+        print("Error: expected PDF was not created.")
+        sys.exit(1)
+
+    print(f"PDF build successful: {dest_pdf}")
 
 
 if __name__ == "__main__":
