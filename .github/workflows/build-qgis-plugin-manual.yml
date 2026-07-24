@@ -2,8 +2,7 @@ name: Build QGIS plugin development manual
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+  pull_request:
     paths:
       - "resources/qgis-plugin-development-manual/**"
       - ".github/workflows/build-qgis-plugin-manual.yml"
@@ -13,10 +12,11 @@ permissions:
 
 jobs:
   build:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
@@ -57,13 +57,13 @@ jobs:
             --outdir "$MANUAL" \
             "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.docx"
 
-      - name: Prepare public downloads
+      - name: Prepare release assets
         shell: bash
         run: |
           set -euo pipefail
           ROOT="resources/qgis-plugin-development-manual"
           MANUAL="$ROOT/manual"
-          OUT="public/downloads/qgis-plugin-development-manual"
+          OUT="release-assets"
           rm -rf "$OUT"
           mkdir -p "$OUT"
           cp "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf" "$OUT/"
@@ -71,20 +71,20 @@ jobs:
           zip -qr "$OUT/qgis-plugin-development-manual-source.zip" "$ROOT" \
             -x '*/reference.docx' '*/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf' \
                '*/Desenvolvimento_de_Plugins_QGIS_com_Python.docx'
-          sha256sum "$OUT"/* > "$OUT/SHA256SUMS.txt"
+          (cd "$OUT" && sha256sum * > SHA256SUMS.txt)
 
-      - name: Commit generated artefacts
+      - name: Publish or update manual release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: qgis-plugin-manual-v1.0.0
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resources/qgis-plugin-development-manual/manual/manual.md \
-                  resources/qgis-plugin-development-manual/assets/diagrams/*.png \
-                  public/downloads/qgis-plugin-development-manual
-          if git diff --cached --quiet; then
-            echo "No generated changes."
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" release-assets/* --clobber
           else
-            git commit -m "Build QGIS plugin development manual [skip ci]"
-            git push
+            gh release create "$TAG" release-assets/* \
+              --target main \
+              --title "Manual de Desenvolvimento de Plugins QGIS v1.0.0" \
+              --notes "Manual em português, do básico ao avançado, por Jubílio Filiano Maússe. Inclui estudos de caso do GPX Batch Converter e GeoClick Capture, exemplos, diagramas, projecto prático, checklists e automação de publicação."
           fi
