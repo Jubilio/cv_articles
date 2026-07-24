@@ -80,19 +80,11 @@ jobs:
           sha256sum "$OUT"/* > "$OUT/SHA256SUMS.txt"
 
       - name: Commit generated artefacts
-        env:
-          TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resources/qgis-plugin-development-manual/manual/manual.md \
-                  resources/qgis-plugin-development-manual/assets/diagrams/*.png \
-                  public/downloads/qgis-plugin-development-manual
-          if git diff --cached --quiet; then
-            echo "No generated changes."
-          else
-            git commit -m "Build QGIS plugin development manual [skip ci]"
-            git push origin "HEAD:${TARGET_BRANCH}"
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Build QGIS plugin development manual [skip ci]
+          branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+          file_pattern: >-
+            resources/qgis-plugin-development-manual/manual/manual.md
+            resources/qgis-plugin-development-manual/assets/diagrams/*.png
+            public/downloads/qgis-plugin-development-manual/*
