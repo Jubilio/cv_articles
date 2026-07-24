@@ -1,0 +1,90 @@
+name: Build QGIS plugin development manual
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "resources/qgis-plugin-development-manual/**"
+      - ".github/workflows/build-qgis-plugin-manual.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install documentation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc libreoffice graphviz fonts-dejavu-core zip
+          python -m pip install --upgrade pip python-docx
+
+      - name: Rebuild source and diagrams
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="resources/qgis-plugin-development-manual"
+          mkdir -p "$ROOT/manual" "$ROOT/assets/diagrams"
+          cat "$ROOT"/manual/parts/*.md > "$ROOT/manual/manual.md"
+          for source in "$ROOT"/assets/diagrams/*.dot; do
+            dot -Tpng "$source" -o "${source%.dot}.png"
+          done
+          python "$ROOT/make_reference.py"
+
+      - name: Build DOCX and PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="resources/qgis-plugin-development-manual"
+          MANUAL="$ROOT/manual"
+          pandoc "$MANUAL/manual.md" \
+            -o "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.docx" \
+            --reference-doc="$MANUAL/reference.docx" \
+            --lua-filter="$MANUAL/pagebreak.lua" \
+            --resource-path="$ROOT" \
+            --metadata title="Desenvolvimento de Plugins QGIS com Python" \
+            --metadata author="Jubílio Filiano Maússe"
+          libreoffice --headless --convert-to pdf \
+            --outdir "$MANUAL" \
+            "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.docx"
+
+      - name: Prepare public downloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="resources/qgis-plugin-development-manual"
+          MANUAL="$ROOT/manual"
+          OUT="public/downloads/qgis-plugin-development-manual"
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          cp "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf" "$OUT/"
+          cp "$MANUAL/Desenvolvimento_de_Plugins_QGIS_com_Python.docx" "$OUT/"
+          zip -qr "$OUT/qgis-plugin-development-manual-source.zip" "$ROOT" \
+            -x '*/reference.docx' '*/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf' \
+               '*/Desenvolvimento_de_Plugins_QGIS_com_Python.docx'
+          sha256sum "$OUT"/* > "$OUT/SHA256SUMS.txt"
+
+      - name: Commit generated artefacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resources/qgis-plugin-development-manual/manual/manual.md \
+                  resources/qgis-plugin-development-manual/assets/diagrams/*.png \
+                  public/downloads/qgis-plugin-development-manual
+          if git diff --cached --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "Build QGIS plugin development manual [skip ci]"
+            git push
+          fi
