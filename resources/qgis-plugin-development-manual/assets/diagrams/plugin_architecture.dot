@@ -1,0 +1,17 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="transparent", pad="0.25", nodesep="0.4", ranksep="0.55"];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10.5, color="#0B4F5C", fillcolor="#F4FAF8", fontcolor="#083A44", penwidth=1.4];
+  edge [color="#2A7F78", penwidth=1.5, arrowsize=0.75];
+  qgis [label="QGIS Desktop\n(iface, canvas, project, task manager)", fillcolor="#D9EFEA"];
+  init [label="__init__.py\nclassFactory(iface)"];
+  main [label="Classe principal\ninitGui() | run() | unload()"];
+  ui [label="Interface\nQDialog / QDockWidget / widgets QGIS"];
+  services [label="Serviços\nconversão | snapping | rede | exportação"];
+  data [label="Dados e saídas\ncamadas | ficheiros | definições"];
+  qgis -> init -> main;
+  main -> ui;
+  main -> services;
+  ui -> services;
+  services -> data;
+  data -> qgis [style=dashed];
+}

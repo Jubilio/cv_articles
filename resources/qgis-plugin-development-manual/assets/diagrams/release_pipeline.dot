@@ -1,0 +1,13 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.45", ranksep="0.65"];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10.2, color="#0B4F5C", fillcolor="#F4FAF8", fontcolor="#083A44", penwidth=1.4];
+  edge [color="#2A7F78", penwidth=1.6, arrowsize=0.75];
+  branch [label="Branch de funcionalidade"];
+  pr [label="Pull Request"];
+  ci [label="Compilar + testes +\nvalidação do pacote"];
+  merge [label="Merge em main"];
+  tag [label="Tag vX.Y.Z"];
+  release [label="GitHub Release + ZIP"];
+  qgis [label="Upload no repositório QGIS"];
+  branch -> pr -> ci -> merge -> tag -> release -> qgis;
+}

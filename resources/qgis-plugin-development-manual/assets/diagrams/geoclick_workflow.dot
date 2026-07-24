@@ -1,0 +1,13 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.45", ranksep="0.65"];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10.2, color="#0B4F5C", fillcolor="#EDF8F5", fontcolor="#083A44", penwidth=1.4];
+  edge [color="#E77A22", penwidth=1.6, arrowsize=0.75];
+  click [label="Clique no mapa"];
+  snap [label="Snapping do projecto\nou fallback vértice/segmento"];
+  transform [label="Transformar CRS\nprojecto -> WGS 84"];
+  identify [label="Identificar camada\ne feição de origem"];
+  save [label="Guardar ponto e\nmetadados de auditoria"];
+  geocode [label="Geocodificação reversa\nopcional e assíncrona"];
+  review [label="Rever, desfazer, eliminar\ne exportar no Capture Log"];
+  click -> snap -> transform -> identify -> save -> geocode -> review;
+}

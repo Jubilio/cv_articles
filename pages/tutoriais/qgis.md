@@ -4,10 +4,14 @@ title: "Tutoriais: QGIS"
 
 # Dicas e Tutoriais: QGIS
 
-*(Conteúdo em desenvolvimento)*
+## Manual: Desenvolvimento de Plugins QGIS com Python
 
-Brevemente partilharei aqui fluxos de trabalho específicos no QGIS, tais como:
+Guia do básico ao avançado para criar, testar, empacotar e publicar plugins QGIS com Python e PyQGIS. Inclui exemplos práticos baseados no **GPX Batch Converter** e no **GeoClick Capture**, compatibilidade QGIS 3/4 e Qt 5/6, tarefas em segundo plano, snapping, rede, segurança e CI/CD.
 
-1. **Integração com Google Earth Engine (Plugin GEE):** Como correr scripts GEE diretamente na interface do QGIS.
-2. **Estilos Dinâmicos (Data-defined Overrides):** Como criar mapas temáticos avançados usando expressões SQL e regras lógicas para alterar símbolos com base em múltiplos atributos.
-3. **Cálculo de Áreas e Geometrias (Field Calculator):** Truques com expressões regulares e funções geométricas avançadas no QGIS.
+[Consultar o manual e os downloads →](desenvolvimento_plugins_qgis.md)
+
+## Outros conteúdos em preparação
+
+1. **Integração com Google Earth Engine (Plugin GEE):** como correr scripts GEE directamente na interface do QGIS.
+2. **Estilos dinâmicos (Data-defined Overrides):** como criar mapas temáticos avançados usando expressões e regras lógicas para alterar símbolos com base em múltiplos atributos.
+3. **Cálculo de áreas e geometrias (Field Calculator):** truques com expressões regulares e funções geométricas avançadas no QGIS.
