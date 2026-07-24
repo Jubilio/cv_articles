@@ -1,0 +1,14 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.75"];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=11, color="#0B4F5C", fillcolor="#E8F5F2", fontcolor="#083A44", penwidth=1.5];
+  edge [color="#E77A22", penwidth=1.8, arrowsize=0.8];
+  idea [label="1. Problema e escopo"];
+  structure [label="2. Estrutura do plugin"];
+  develop [label="3. Desenvolvimento"];
+  test [label="4. Testes no QGIS"];
+  package [label="5. Empacotamento ZIP"];
+  publish [label="6. Release e publicação"];
+  maintain [label="7. Monitoria e manutenção"];
+  idea -> structure -> develop -> test -> package -> publish -> maintain;
+  maintain -> idea [style=dashed, color="#5C7A7D"];
+}
