@@ -30,13 +30,13 @@ Os estudos de caso são baseados em dois plugins desenvolvidos a partir de neces
 
 ## Downloads
 
-- [Descarregar o manual em PDF](https://jubilio.github.io/cv_articles/downloads/qgis-plugin-development-manual/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf)
-- [Descarregar a versão editável em Word](https://jubilio.github.io/cv_articles/downloads/qgis-plugin-development-manual/Desenvolvimento_de_Plugins_QGIS_com_Python.docx)
-- [Descarregar o pacote-fonte](https://jubilio.github.io/cv_articles/downloads/qgis-plugin-development-manual/qgis-plugin-development-manual-source.zip)
-- [Verificar hashes SHA-256](https://jubilio.github.io/cv_articles/downloads/qgis-plugin-development-manual/SHA256SUMS.txt)
+- [Descarregar o manual em PDF](https://github.com/Jubilio/cv_articles/releases/download/qgis-plugin-manual-v1.0.0/Desenvolvimento_de_Plugins_QGIS_com_Python.pdf)
+- [Descarregar a versão editável em Word](https://github.com/Jubilio/cv_articles/releases/download/qgis-plugin-manual-v1.0.0/Desenvolvimento_de_Plugins_QGIS_com_Python.docx)
+- [Descarregar o pacote-fonte](https://github.com/Jubilio/cv_articles/releases/download/qgis-plugin-manual-v1.0.0/qgis-plugin-development-manual-source.zip)
+- [Verificar hashes SHA-256](https://github.com/Jubilio/cv_articles/releases/download/qgis-plugin-manual-v1.0.0/SHA256SUMS.txt)
 
 ## Fonte no GitHub
 
-A fonte provisória está disponível em [`resources/qgis-plugin-development-manual`](https://github.com/Jubilio/cv_articles/tree/main/resources/qgis-plugin-development-manual). Posteriormente, o conteúdo será transferido para um repositório dedicado.
+A fonte provisória está disponível em [`resources/qgis-plugin-development-manual`](https://github.com/Jubilio/cv_articles/tree/main/resources/qgis-plugin-development-manual). Posteriormente, o conteúdo poderá ser transferido para um repositório dedicado.
 
-> Os downloads serão gerados automaticamente pelo GitHub Actions após a integração desta actualização na branch `main`.
+Os documentos são reconstruídos e publicados automaticamente através do GitHub Actions.
