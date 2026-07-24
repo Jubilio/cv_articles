@@ -7,6 +7,10 @@ on:
     paths:
       - "resources/qgis-plugin-development-manual/**"
       - ".github/workflows/build-qgis-plugin-manual.yml"
+  pull_request:
+    paths:
+      - "resources/qgis-plugin-development-manual/**"
+      - ".github/workflows/build-qgis-plugin-manual.yml"
 
 permissions:
   contents: write
@@ -17,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
@@ -74,6 +80,8 @@ jobs:
           sha256sum "$OUT"/* > "$OUT/SHA256SUMS.txt"
 
       - name: Commit generated artefacts
+        env:
+          TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
         shell: bash
         run: |
           set -euo pipefail
@@ -86,5 +94,5 @@ jobs:
             echo "No generated changes."
           else
             git commit -m "Build QGIS plugin development manual [skip ci]"
-            git push
+            git push origin "HEAD:${TARGET_BRANCH}"
           fi
