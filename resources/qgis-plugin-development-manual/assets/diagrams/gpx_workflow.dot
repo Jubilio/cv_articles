@@ -1,0 +1,13 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.5", ranksep="0.65"];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10.5, color="#0B4F5C", fillcolor="#EDF8F5", fontcolor="#083A44", penwidth=1.4];
+  edge [color="#E77A22", penwidth=1.6, arrowsize=0.75];
+  input [label="Pasta com ficheiros GPX"];
+  validate [label="Validar opções e GDAL"];
+  task [label="QgsTask\nprocessamento em fundo"];
+  inspect [label="Detectar subcamadas\nwaypoints, tracks, routes..."];
+  convert [label="Converter / fundir\nOGR/GDAL"];
+  report [label="Resultados, progresso\ne relatório CSV"];
+  output [label="Shapefile, GPKG,\nGeoJSON, KML ou CSV/WKT"];
+  input -> validate -> task -> inspect -> convert -> report -> output;
+}
