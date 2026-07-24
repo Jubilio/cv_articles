@@ -84,7 +84,3 @@ jobs:
         with:
           commit_message: Build QGIS plugin development manual [skip ci]
           branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
-          file_pattern: >-
-            resources/qgis-plugin-development-manual/manual/manual.md
-            resources/qgis-plugin-development-manual/assets/diagrams/*.png
-            public/downloads/qgis-plugin-development-manual/*
