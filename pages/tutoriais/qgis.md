@@ -10,6 +10,12 @@ Guia do básico ao avançado para criar, testar, empacotar e publicar plugins QG
 
 [Consultar o manual e os downloads →](desenvolvimento_plugins_qgis.md)
 
+## Artigo: publicação do manual com Quarto
+
+Relato técnico sobre a transformação do manual num **Quarto Book** pesquisável, a geração automática de capítulos, a publicação com GitHub Actions e a resolução do erro 404 inicial no GitHub Pages.
+
+[Ler o artigo completo →](../artigos/quarto_qgis_plugin_manual.md)
+
 ## Outros conteúdos em preparação
 
 1. **Integração com Google Earth Engine (Plugin GEE):** como correr scripts GEE directamente na interface do QGIS.
