@@ -28,6 +28,7 @@ project:
     - title: Artigos
       children:
         - file: pages/artigos/index.md
+        - file: pages/artigos/quarto_qgis_plugin_manual.md
         - file: pages/artigos/groundwater_mueda.md
     - title: Mapas & Análises GIS
       children:
