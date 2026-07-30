@@ -4,11 +4,20 @@ title: "Artigos e Manuscritos"
 
 # 📚 Artigos e Manuscritos Técnicos
 
-Bem-vindo à secção de artigos. Aqui partilho manuscritos, relatórios técnicos e estudos independentes focados em análise espacial, recursos hídricos, desenvolvimento de ferramentas e publicação técnica reproduzível.
+Bem-vindo à secção de artigos. Aqui partilho manuscritos, relatórios técnicos e estudos independentes focados em análise espacial, recursos hídricos, gestão de informação humanitária, desenvolvimento de ferramentas e publicação técnica reproduzível.
 
 ## Publicações Recentes
 
 ::::{grid} 1 1 2 2
+
+:::{card} Do alerta à entrevista comunitária: lições aprendidas na construção de um sistema RRM com KoboToolbox e XLSForm
+**Ano:** 2026 | **Área:** Gestão de Informação Humanitária & Desenvolvimento de Formulários
+
+Estudo de caso técnico sobre identificadores únicos, pontuação multidimensional, ligação entre formulários, ficheiros CSV externos, perguntas dinâmicas e validação incremental.
+
++++
+[Ler o Artigo](kobo_xlsform_rrm_licoes_aprendidas.md)
+:::
 
 :::{card} Da documentação estática a um livro técnico online com Quarto e GitHub Pages
 **Ano:** 2026 | **Área:** Documentação técnica, QGIS & DevOps
