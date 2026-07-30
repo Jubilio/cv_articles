@@ -157,6 +157,6 @@ A minha formação combina cartografia, bases de dados espaciais, sensoriamento 
 
 Estou aberto a colaborações em projectos de **SIG, análise humanitária, avaliação de necessidades, dados para desenvolvimento e investigação aplicada**.
 
-- **Email:** [jubiliomausse5@gmail.com](mailto:jubiliomausse5@gmail.com)
+- **Email:** [jubiliomausse5\@gmail.com](mailto:jubiliomausse5@gmail.com)
 - **GitHub:** [github.com/Jubilio](https://github.com/Jubilio)
 - **LinkedIn:** [linkedin.com/in/jubilio-mausse](https://www.linkedin.com/in/jubilio-mausse)
