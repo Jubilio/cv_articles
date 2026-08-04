@@ -5,6 +5,14 @@ description: "Uma extensão experimental para dar ao utilizador maior controlo s
 
 # CensureMe
 
+```{image} ../../img/projects/software-tools.svg
+:alt: Capa do CensureMe
+:width: 100%
+:align: center
+```
+
+**Estado:** Protótipo experimental  
+
 **Tipo:** Extensão experimental para navegador  
 **Tecnologias:** JavaScript, TensorFlow.js, NSFW.js e Chrome Extensions  
 **Repositório:** [github.com/Jubilio/censureme](https://github.com/Jubilio/censureme)
