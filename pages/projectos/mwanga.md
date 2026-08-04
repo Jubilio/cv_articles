@@ -4,6 +4,14 @@ title: "Mwanga"
 
 # Mwanga
 
+```{image} ../../img/projects/mwanga.svg
+:alt: Capa do Mwanga
+:width: 100%
+:align: center
+```
+
+**Estado:** Produto independente em desenvolvimento  
+
 **Tipo:** Plataforma independente de finanças pessoais e familiares em desenvolvimento  
 **Tecnologias:** React, Vite, Node.js, Express, SQLite/PostgreSQL, PWA e Capacitor  
 **Código:** [github.com/Jubilio/mwanga](https://github.com/Jubilio/mwanga)

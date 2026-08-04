@@ -4,6 +4,14 @@ title: "XLSForm AI Translator"
 
 # XLSForm AI Translator
 
+```{image} ../../img/projects/xlsform.svg
+:alt: Capa do XLSForm AI Translator
+:width: 100%
+:align: center
+```
+
+**Estado:** Suplemento experimental em desenvolvimento  
+
 **Tipo:** Suplemento experimental para Microsoft Excel  
 **Tecnologias:** TypeScript, Office.js, Webpack, Express e Vitest  
 **Código:** [github.com/Jubilio/xlsform-ai-translator](https://github.com/Jubilio/xlsform-ai-translator)

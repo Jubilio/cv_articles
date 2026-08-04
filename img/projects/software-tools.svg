@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-label="Independent Tools">
+<rect width="800" height="420" rx="28" fill="#242043"/>
+<circle cx="760" cy="-15" r="175" fill="#a78bfa" opacity=".10"/>
+<circle cx="25" cy="425" r="150" fill="#a78bfa" opacity=".08"/>
+<rect x="430" y="85" width="285" height="235" rx="20" fill="#fff" opacity=".10"/><path d="M515 145L470 202L515 259M630 145L675 202L630 259M595 125L550 280" fill="none" stroke="#a78bfa" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="55" y="80" fill="#a78bfa" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">JUBÍLIO MAÚSSE · PORTFOLIO</text>
+<text x="55" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="700">Independent Tools</text>
+<text x="55" y="185" fill="#dbeafe" font-family="Arial, sans-serif" font-size="21">Python · Automation · Product thinking</text>
+<rect x="55" y="350" width="105" height="7" rx="3.5" fill="#a78bfa"/>
+</svg>
