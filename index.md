@@ -6,7 +6,7 @@ description: >
 ---
 # Bem-vindo ao Meu Portefólio
 
-```{image}
+```{image} img/Perfile_Mausse.png
 :alt: Jubílio Filiano Maússe
 :width: 180px
 :align: right
@@ -42,7 +42,7 @@ Publicação de análises técnicas sobre recursos hídricos, vulnerabilidade e 
 Integração de sensoriamento remoto, AHP em SIG e validação com fontes de água no distrito
 de Mueda, Norte de Moçambique.
 
-```{image}
+```{image} img/Mueda_GW.png
 :alt: Mapa de zonas potenciais de águas subterrâneas em Mueda
 :width: 100%
 ```
