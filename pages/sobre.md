@@ -5,7 +5,7 @@ description: "Perfil profissional de Jubílio Filiano Maússe, especialista em d
 
 # 👤 Sobre Mim
 
-Sou **Jubílio Filiano Maússe**, **Senior Assessment Officer e especialista sénior em Dados e Sistemas de Informação Geográfica (SIG)** na **IMPACT Initiatives / REACH Mozambique**. Trabalho na intersecção entre **gestão de informação humanitária, avaliações de necessidades, análise espacial, sensoriamento remoto e desenvolvimento de sistemas de dados**.
+Sou **Jubílio Filiano Maússe**, **Data and GIS Analyst** na **IMPACT Initiatives / REACH Mozambique**. Trabalho na intersecção entre **gestão de informação humanitária, avaliações de necessidades, análise espacial, sensoriamento remoto e desenvolvimento de sistemas de dados**.
 
 Apoio equipas operacionais e mecanismos de coordenação a transformar dados dispersos em evidências claras para priorização geográfica, desenho de respostas e acompanhamento de populações afectadas por conflito, deslocamento, choques climáticos e limitações de acesso a serviços essenciais.
 
@@ -102,7 +102,7 @@ Produção de mapas operacionais, análises de necessidades agudas, sistemas de 
 
 ## 💼 Experiência Profissional
 
-### Senior Assessment Officer | IMPACT Initiatives / REACH Mozambique
+### Data and GIS Analyst | IMPACT Initiatives / REACH Mozambique
 *2025 – Presente*
 
 - Liderança técnica de avaliações humanitárias, sistemas de monitorização e análises multissectoriais.
