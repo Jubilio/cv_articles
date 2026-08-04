@@ -53,6 +53,7 @@ project:
     - title: Blog
       children:
         - file: pages/blog.md
+        - file: blog/processo-criativo-com-ia.md
         - file: blog/gee-banhine-lulc.md
     - file: pages/contactos.md
 
