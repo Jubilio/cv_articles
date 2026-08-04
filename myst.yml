@@ -1,18 +1,18 @@
 version: 1
 project:
   title: Jubílio Filiano Maússe
-  subtitle: GIS · Remote Sensing · MEAL · Data Analysis
+  subtitle: Geospatial Analysis · Humanitarian Data · Applied Technology
   description: >
-    Portefólio académico e profissional de Jubílio Filiano Maússe — GIS Officer na ACTED/IMPACT
-    especializado em dados geoespaciais, sensoriamento remoto e análise humanitária.
+    Portefólio de Jubílio Filiano Maússe, Senior Assessment Officer e especialista em dados e SIG,
+    com trabalho em análise humanitária, sensoriamento remoto e desenvolvimento de ferramentas.
   keywords:
     - GIS
     - Remote Sensing
+    - Humanitarian Assessments
     - MEAL
-    - Moçambique
-    - Humanitarian
+    - Mozambique
     - Data Analysis
-    - ArcGIS
+    - Python
     - QGIS
   authors:
     - name: Jubílio Filiano Maússe
@@ -35,6 +35,7 @@ project:
       children:
         - file: pages/mapas/index.md
         - file: pages/mapas/mueda_groundwater.md
+        - file: pages/mapas/cabo_delgado_rrm.md
     - title: Tutoriais Técnicos
       children:
         - file: pages/tutoriais/index.md
