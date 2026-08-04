@@ -42,7 +42,13 @@ project:
         - file: pages/tutoriais/arcgis.md
         - file: pages/tutoriais/qgis.md
         - file: pages/tutoriais/r_kobo.md
-    - file: pages/projectos/portfolio.md
+    - title: Projectos
+      children:
+        - file: pages/projectos/portfolio.md
+        - file: pages/projectos/merge_excel.md
+        - file: pages/projectos/censureme.md
+        - file: pages/projectos/mwanga.md
+        - file: pages/projectos/xlsform_ai_translator.md
     - file: pages/publicacoes.md
     - title: Blog
       children:
