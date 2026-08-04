@@ -2,8 +2,8 @@ from feedgen.feed import FeedGenerator
 
 
 SITE_URL = "https://jubilio.github.io/cv_articles"
-BLOG_URL = `${SITE_URL}/pages/blog`
-ARTICLE_URL = `${SITE_URL}/blog/gee-banhine-lulc`
+BLOG_URL = f"{SITE_URL}/pages/blog"
+ARTICLE_URL = f"{SITE_URL}/blog/gee-banhine-lulc"
 
 
 def generate_feeds():
