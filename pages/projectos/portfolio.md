@@ -1,47 +1,136 @@
 ---
 title: "Portefólio de Projectos"
+description: "Estudos de caso em análise geoespacial, dados humanitários e desenvolvimento de software por Jubílio Filiano Maússe."
 ---
 
 # 🚀 Portefólio de Projectos
 
-Este portefólio reúne trabalhos profissionais, académicos e projectos independentes que nasceram da minha curiosidade por dados, mapas e software.
+Não apresento estes trabalhos apenas como uma lista de tecnologias. Cada projecto parte de um problema, documenta uma abordagem e mostra o que aprendi durante a construção da solução.
 
-Os projectos pessoais são o espaço onde experimento ideias, aprendo novas tecnologias e transformo pequenos problemas em ferramentas que podem ser úteis para outras pessoas.
+## Estudos de caso seleccionados
 
-## Projectos Independentes de Software
+::::{grid} 1 1 2 2
 
-| Projecto | O que estou a explorar |
-|---|---|
-| [Excel Merge GUI](./merge_excel.md) | Uma aplicação desktop simples para combinar ficheiros Excel sem exigir programação. |
-| [CensureMe](./censureme.md) | Uma extensão experimental de controlo pessoal de conteúdos, com análise local e diferentes formas de intervenção. |
-| [Mwanga](./mwanga.md) | Uma plataforma de finanças pessoais e familiares que combina organização, visualização e aprendizagem financeira. |
-| [XLSForm AI Translator](./xlsform_ai_translator.md) | Um suplemento para traduzir XLSForms dentro do Excel sem comprometer variáveis, fórmulas e lógica do questionário. |
+:::{card} Mapeamento de Águas Subterrâneas em Mueda
+```{image} ../../img/projects/groundwater.svg
+:alt: Capa do projecto de mapeamento de águas subterrâneas
+:width: 100%
+```
 
-### Uma trajectória de experimentação
+**O problema:** apoiar a identificação de zonas com condições mais favoráveis à ocorrência de águas subterrâneas.
 
-Estes projectos mostram uma progressão que valorizo. Comecei por automatizar uma tarefa concreta no computador com o Excel Merge GUI. Depois explorei uma extensão de navegador com o CensureMe, avancei para a arquitectura full-stack e móvel do Mwanga e apliquei IA com guardrails técnicos no XLSForm AI Translator.
+**O meu papel:** investigador independente.
 
-Nem todos têm o mesmo grau de maturidade. Alguns são ferramentas pequenas, outros são protótipos ambiciosos em desenvolvimento. Em conjunto, documentam como penso: começar pelo problema, construir uma solução utilizável, reconhecer os limites e continuar a melhorar.
+**Métodos:** sensoriamento remoto, AHP, SIG e validação com pontos de água.
 
-## Projectos Humanitários e Avaliação de Necessidades
++++
+[Ler o estudo de caso →](../artigos/groundwater_mueda.md)
+:::
 
-### Avaliações Rápidas de Necessidades (RNA) em Cabo Delgado
+:::{card} Avaliações Rápidas de Necessidades
+```{image} ../../img/projects/rrm.svg
+:alt: Capa do projecto de avaliações rápidas de necessidades
+:width: 100%
+```
 
-**Função:** GIS Officer  
-**Organização:** ACTED/IMPACT
+**O problema:** produzir evidências accionáveis dentro de ciclos curtos de resposta a choques.
 
-Produção de mapas estáticos e dinâmicos de áreas afectadas por choques, para apoiar missões interagências de resposta rápida.
+**O meu papel:** desenho de ferramentas, gestão e análise de dados, cartografia e comunicação de resultados.
 
-- **Ferramentas:** ArcGIS Pro, QGIS e KoBoToolbox.
-- **Contributo:** informação sobre acessibilidade, localização e deslocamento de populações para apoiar a leitura operacional dos parceiros humanitários.
+**Princípio:** apresentar apenas metodologias e produtos públicos ou anonimizados.
 
-## Projectos Académicos e Investigação
++++
+[Ver o estudo de caso →](../mapas/cabo_delgado_rrm.md)
+:::
 
-### Modelação de Zonas de Potencial de Águas Subterrâneas
+:::{card} XLSForm AI Translator
+```{image} ../../img/projects/xlsform.svg
+:alt: Capa do XLSForm AI Translator
+:width: 100%
+```
 
-**Função:** Investigador independente
+**O problema:** traduções convencionais podem alterar a lógica técnica de um XLSForm.
 
-Aplicação do Processo de Análise Hierárquica (AHP) num ambiente SIG, combinada com dados de detecção remota, para identificar zonas com potencial de águas subterrâneas no distrito de Mueda.
+**A solução:** um suplemento para Excel que protege variáveis, fórmulas e placeholders, mantendo revisão humana.
 
-- **Ferramentas:** Google Earth Engine, QGIS e R.
-- **Produto:** [Ler o artigo técnico](../artigos/groundwater_mueda.md).
+**Tecnologias:** TypeScript, Office.js, Express e Vitest.
+
++++
+[Conhecer o projecto →](./xlsform_ai_translator.md)
+:::
+
+:::{card} QGIS Plugin Development Manual
+```{image} ../../img/projects/qgis-manual.svg
+:alt: Capa do manual de desenvolvimento de plugins QGIS
+:width: 100%
+```
+
+**O problema:** documentação técnica em vários formatos torna-se rapidamente inconsistente.
+
+**A solução:** uma fonte canónica que gera livro online, PDF, Word e releases verificáveis.
+
+**Tecnologias:** Python, PyQGIS, Quarto e GitHub Actions.
+
++++
+[Ler como foi construído →](../artigos/quarto_qgis_plugin_manual.md)
+:::
+
+::::
+
+## Projectos independentes de software
+
+::::{grid} 1 1 2 2
+
+:::{card} Excel Merge GUI
+```{image} ../../img/projects/software-tools.svg
+:alt: Capa dos projectos independentes de software
+:width: 100%
+```
+
+Aplicação desktop em Python para combinar ficheiros Excel escolhendo visualmente as chaves e o tipo de junção.
+
+**Foco de aprendizagem:** transformar uma rotina de dados numa ferramenta utilizável sem edição de código.
+
++++
+[Explorar o projecto →](./merge_excel.md)
+:::
+
+:::{card} Mwanga
+```{image} ../../img/projects/mwanga.svg
+:alt: Capa do projecto Mwanga
+:width: 100%
+```
+
+Plataforma independente de finanças pessoais e familiares em desenvolvimento.
+
+**Foco de aprendizagem:** arquitectura full-stack, experiência PWA, visualização, privacidade e desenho de produto.
+
++++
+[Explorar o projecto →](./mwanga.md)
+:::
+
+:::{card} CensureMe
+```{image} ../../img/projects/software-tools.svg
+:alt: Capa dos projectos independentes de software
+:width: 100%
+```
+
+Extensão experimental que explora controlo pessoal de conteúdo através de filtros configuráveis e análise local.
+
+**Foco de aprendizagem:** modelos no navegador, desempenho, transparência, privacidade e falsos positivos.
+
++++
+[Explorar o projecto →](./censureme.md)
+:::
+
+::::
+
+## Como leio esta trajectória
+
+Estes trabalhos não têm todos o mesmo grau de maturidade. Alguns são estudos concluídos, outros são ferramentas pequenas ou produtos em evolução. Em conjunto, mostram a progressão entre análise geoespacial, resposta humanitária, automação e desenvolvimento de software.
+
+O elemento comum é o processo: **começar por um problema real, compreender as limitações, construir uma resposta verificável e documentar o que foi aprendido.**
+
+---
+
+Quer discutir um destes projectos ou propor uma colaboração? [Entre em contacto](../contactos.md) ou visite o meu [GitHub](https://github.com/Jubilio).
