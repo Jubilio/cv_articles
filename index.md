@@ -1,7 +1,7 @@
 ---
 title: Jubílio Filiano Maússe — Geospatial Analysis, Humanitarian Data & Applied Technology
 description: >
-  Portefólio de Jubílio Filiano Maússe, Senior Assessment Officer e especialista em dados e SIG,
+  Portefólio de Jubílio Filiano Maússe, Data and GIS Analyst e especialista em dados e SIG,
   com trabalho em análise humanitária, sensoriamento remoto e desenvolvimento de ferramentas.
 ---
 
@@ -20,7 +20,7 @@ description: >
 :class: profile-photo
 ```
 
-Sou **Jubílio Filiano Maússe**, Senior Assessment Officer e especialista em Dados e Sistemas de Informação Geográfica na IMPACT Initiatives / REACH Mozambique.
+Sou **Jubílio Filiano Maússe**, Data and GIS Analyst e especialista em Dados e Sistemas de Informação Geográfica na IMPACT Initiatives / REACH Mozambique.
 
 Trabalho na intersecção entre **análise geoespacial, avaliações humanitárias e desenvolvimento de ferramentas**, transformando dados complexos em evidências claras para apoiar decisões. Este portefólio reúne projectos profissionais, investigação independente, software e documentação técnica.
 
