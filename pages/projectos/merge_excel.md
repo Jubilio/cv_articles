@@ -5,6 +5,14 @@ description: "Uma aplicação desktop em Python para combinar ficheiros Excel de
 
 # Excel Merge GUI
 
+```{image} ../../img/projects/software-tools.svg
+:alt: Capa do Excel Merge GUI
+:width: 100%
+:align: center
+```
+
+**Estado:** Ferramenta funcional em evolução  
+
 **Tipo:** Aplicação desktop independente  
 **Tecnologias:** Python, pandas e Tkinter  
 **Repositório:** [github.com/Jubilio/merge_excel](https://github.com/Jubilio/merge_excel)
