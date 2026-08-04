@@ -1,10 +1,11 @@
 ---
-title: Jubílio Filiano Maússe — GIS, Remote Sensing, Data Analyst & MEAL
+title: Jubílio Filiano Maússe — Geospatial Analysis, Humanitarian Data & Applied Technology
 description: >
-  Portefólio profissional de Jubílio Filiano Maússe, GIS Officer na ACTED/IMPACT.
-  Especializado em dados geoespaciais, sensoriamento remoto e análise humanitária em Moçambique.
+  Portefólio de Jubílio Filiano Maússe, Senior Assessment Officer e especialista em dados e SIG,
+  com trabalho em análise humanitária, sensoriamento remoto e desenvolvimento de ferramentas.
 ---
-# Bem-vindo ao Meu Portefólio
+
+# Dados, mapas e tecnologia para resolver problemas reais
 
 ```{image} img/Perfile_Mausse.png
 :alt: Jubílio Filiano Maússe
@@ -13,51 +14,103 @@ description: >
 :class: profile-photo
 ```
 
-Sou **Jubílio Filiano Maússe**, GIS Officer na [ACTED/IMPACT Initiatives](https://www.impact-initiatives.org/)
-em Moçambique. Combino dados geoespaciais e informação humanitária para gerar *insights* accionáveis
-em contextos de resposta a crises — com foco em RNA (Rapid Needs Assessment) e RRM
-(Rapid Response Mechanism) em Cabo Delgado.
+Sou **Jubílio Filiano Maússe**, Senior Assessment Officer e especialista em Dados e Sistemas de Informação Geográfica na IMPACT Initiatives / REACH Mozambique.
+
+Trabalho na intersecção entre **análise geoespacial, avaliações humanitárias e desenvolvimento de ferramentas**, transformando dados complexos em evidências claras para apoiar decisões. Este portefólio reúne projectos profissionais, investigação independente, software e documentação técnica.
+
+[Explorar projectos](pages/projectos/portfolio.md) · [Conhecer a minha experiência](pages/sobre.md) · [Descarregar CV](https://jubilio.github.io/cv_articles/cv.pdf) · [Entrar em contacto](pages/contactos.md)
+
+## O que faço
 
 ::::{grid} 1 2 3 3
 
-:::{card} 🌍 GIS & Remote Sensing
-Mapeamento, análise espacial e sensoriamento remoto aplicados a contextos humanitários e ambientais.
+:::{card} 🌍 Análise geoespacial
+Mapeamento, sensoriamento remoto, modelação multicritério e análise espacial aplicados a questões humanitárias e ambientais.
 :::
 
-:::{card} 📊 MEAL & Dados
-Monitorização, Avaliação, Aprendizagem e Responsabilização com ferramentas como KoBoToolbox e R.
+:::{card} 📊 Avaliações e dados
+Desenho metodológico, Kobo/XLSForm, controlo de qualidade, análise estatística e comunicação de resultados para apoiar decisões.
 :::
 
-:::{card} 📝 Investigação
-Publicação de análises técnicas sobre recursos hídricos, vulnerabilidade e resposta humanitária.
+:::{card} 💻 Ferramentas e automação
+Desenvolvimento de soluções em Python, R, JavaScript e TypeScript para tornar processos técnicos mais acessíveis e reproduzíveis.
 :::
 
 ::::
 
-## Destaque: Artigo Recente
+## Projectos em destaque
 
-::::{card}
-**Mapeamento de Zonas Potenciais de Águas Subterrâneas em Mueda**
+::::{grid} 1 1 2 2
 
-Integração de sensoriamento remoto, AHP em SIG e validação com fontes de água no distrito
-de Mueda, Norte de Moçambique.
-
-```{image} img/Mueda_GW.png
-:alt: Mapa de zonas potenciais de águas subterrâneas em Mueda
+:::{card} Groundwater Potential Mapping — Mueda
+```{image} img/projects/groundwater.svg
+:alt: Capa do projecto de mapeamento de águas subterrâneas
 :width: 100%
 ```
 
-[Ler o artigo →](pages/artigos/groundwater_mueda.md) &nbsp;&nbsp; [Descarregar PDF](https://jubilio.github.io/cv_articles/articles/Mausse_2026_Groundwater_Potential_Mueda.pdf)
+**Problema:** identificar zonas mais favoráveis à ocorrência de águas subterrâneas num território de planalto com acesso limitado à água.
+
+**Abordagem:** sensoriamento remoto, AHP em SIG e validação com pontos de água.
+
++++
+[Explorar o estudo →](pages/artigos/groundwater_mueda.md)
+:::
+
+:::{card} Rapid Needs Assessments — Cabo Delgado
+```{image} img/projects/rrm.svg
+:alt: Capa do projecto de avaliações rápidas de necessidades
+:width: 100%
+```
+
+**Problema:** transformar rapidamente informação recolhida após choques em evidências úteis para priorização e coordenação.
+
+**Contributo:** ferramentas, fluxos de dados, análise, mapas e produtos bilingues.
+
++++
+[Ver o estudo de caso →](pages/mapas/cabo_delgado_rrm.md)
+:::
+
+:::{card} XLSForm AI Translator
+```{image} img/projects/xlsform.svg
+:alt: Capa do XLSForm AI Translator
+:width: 100%
+```
+
+**Problema:** traduzir questionários sem quebrar variáveis, fórmulas, relevâncias e placeholders.
+
+**Solução:** suplemento para Excel com protecção da estrutura técnica e revisão humana.
+
++++
+[Conhecer o projecto →](pages/projectos/xlsform_ai_translator.md)
+:::
+
+:::{card} QGIS Plugin Development Manual
+```{image} img/projects/qgis-manual.svg
+:alt: Capa do manual de desenvolvimento de plugins QGIS
+:width: 100%
+```
+
+**Objectivo:** transformar aprendizagem técnica em conhecimento aberto, pesquisável e reproduzível.
+
+**Produto:** manual online com exemplos PyQGIS, publicação automatizada e versões descarregáveis.
+
++++
+[Ler o manual →](https://jubilio.github.io/qgis-plugin-development-manual/)
+:::
+
 ::::
 
-## Navegação Rápida
+## Mais para explorar
 
-| Secção                                   | Conteúdo                             |
-| ------------------------------------------ | ------------------------------------- |
-| [Sobre Mim](pages/sobre.md)                 | Biografia, formação e competências |
-| [Artigos](pages/artigos/index.md)           | Manuscritos e publicações técnicas |
-| [Mapas GIS](pages/mapas/index.md)           | Cartografia e análise geoespacial    |
-| [Tutoriais](pages/tutoriais/index.md)       | ArcGIS, QGIS, R, KoBoToolbox          |
-| [Portefólio](pages/projectos/portfolio.md) | Projectos completados                 |
-| [Publicações](pages/publicacoes.md)       | Lista completa de outputs             |
-| [Contactos](pages/contactos.md)             | Como entrar em contacto               |
+| Área | Conteúdo |
+|---|---|
+| [Projectos](pages/projectos/portfolio.md) | Estudos de caso, ferramentas independentes e produtos em desenvolvimento |
+| [Artigos](pages/artigos/index.md) | Investigação e documentação técnica |
+| [Mapas e análises GIS](pages/mapas/index.md) | Produtos cartográficos e métodos geoespaciais |
+| [Blog](pages/blog.md) | Reflexões sobre tecnologia, aprendizagem e processo criativo |
+| [Publicações](pages/publicacoes.md) | Manuscritos, manuais e relatórios públicos |
+
+---
+
+**Interessado numa colaboração em SIG, dados humanitários ou investigação aplicada?**  
+[Entre em contacto](pages/contactos.md) ou consulte o meu [GitHub](https://github.com/Jubilio).
