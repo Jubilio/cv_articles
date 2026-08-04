@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-label="QGIS Plugin Manual">
+<rect width="800" height="420" rx="28" fill="#20340f"/>
+<circle cx="760" cy="-15" r="175" fill="#a3e635" opacity=".10"/>
+<circle cx="25" cy="425" r="150" fill="#a3e635" opacity=".08"/>
+<path d="M465 270L530 95L595 270L660 95" fill="none" stroke="#a3e635" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><circle cx="530" cy="95" r="17" fill="#fff"/><circle cx="595" cy="270" r="17" fill="#fff"/><path d="M445 310H690" stroke="#fff" stroke-width="6" opacity=".55"/>
+<text x="55" y="80" fill="#a3e635" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">JUBÍLIO MAÚSSE · PORTFOLIO</text>
+<text x="55" y="145" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="700">QGIS Plugin Manual</text>
+<text x="55" y="185" fill="#dbeafe" font-family="Arial, sans-serif" font-size="21">PyQGIS · Quarto · Open knowledge</text>
+<rect x="55" y="350" width="105" height="7" rx="3.5" fill="#a3e635"/>
+</svg>
