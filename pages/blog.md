@@ -3,8 +3,6 @@ title: "📰 Blog & Notícias"
 ---
 Esta secção contém reflexões curtas, atualizações sobre missões de terreno e pensamentos soltos sobre a aplicação de tecnologias GIS no setor humanitário.
 
-[Assinar o Feed RSS](https://jubilio.github.io/cv_articles/rss.xml)
-
 ## Artigos Recentes
 
 ::::{grid} 1 1 2 2
