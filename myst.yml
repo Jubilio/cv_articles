@@ -44,8 +44,10 @@ project:
         - file: pages/tutoriais/r_kobo.md
     - file: pages/projectos/portfolio.md
     - file: pages/publicacoes.md
-    - file: pages/blog.md
-    - file: blog/gee-banhine-lulc.md
+    - title: Blog
+      children:
+        - file: pages/blog.md
+        - file: blog/gee-banhine-lulc.md
     - file: pages/contactos.md
 
 site:
