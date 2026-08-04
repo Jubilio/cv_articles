@@ -6,7 +6,8 @@ description: "Estudo de caso técnico sobre identificadores únicos, pontuação
 # Do alerta à entrevista comunitária: lições aprendidas na construção de um sistema RRM com KoboToolbox e XLSForm
 
 **Autor:** Jubílio Filiano Maússe  
-**Actualizado:** 31 de Julho de 2026  
+**Actualizado:** 4 de Agosto de 2026
+
 **Área:** Gestão de Informação Humanitária, KoboToolbox, XLSForm e Resposta Rápida
 
 > Este artigo sistematiza as lições aprendidas durante o desenho e teste de um fluxo digital para registar alertas humanitários, classificar a sua gravidade e ligar cada alerta a entrevistas comunitárias e grelhas de observação. O foco está nas decisões de arquitectura, nos erros encontrados durante a validação e nas soluções que tornaram o sistema mais estável, rastreável e utilizável.
@@ -15,7 +16,7 @@ description: "Estudo de caso técnico sobre identificadores únicos, pontuação
 
 Sistemas de alerta para mecanismos de resposta rápida precisam de transformar informação inicial, frequentemente incompleta, numa base suficientemente estruturada para apoiar verificação, priorização e recolha complementar. Este artigo apresenta um estudo de caso aplicado sobre a construção de um sistema integrado com **KoboToolbox** e **XLSForm**, composto por um formulário de alerta, um formulário de entrevistas comunitárias e uma grelha de observação ligados por um identificador comum. A solução incluiu geração automática de códigos únicos, pontuação de sete dimensões de gravidade, separação entre classificação descritiva e via operacional, selecção de alertas por ficheiro CSV, recuperação automática de dados com `pulldata()`, perguntas dinâmicas, módulos de repetição para pontos de água, validações de múltipla escolha e optimização de imagens.
 
-O desenvolvimento revelou desafios recorrentes: uso incorrecto de funções XLSForm, cálculos vazios, referências circulares, diferenças entre nomes internos e labels, inconsistências entre o XLSForm e ficheiros externos, erros de contexto dentro de repeats e interfaces que pareciam incompletas antes da selecção do alerta. As lições demonstram que a robustez de um sistema deste tipo depende sobretudo de uma arquitectura lógica unidireccional, identificadores estáveis, regras transparentes, validação incremental e testes no ambiente real de recolha.
+O desenvolvimento revelou desafios recorrentes: uso incorrecto de funções XLSForm, cálculos vazios, referências circulares, diferenças entre nomes internos e labels, inconsistências entre o XLSForm e ficheiros externos, erros de contexto dentro de repeats, filtros aplicados à lista errada e perguntas obrigatórias apresentadas fora do seu contexto. Os testes dos módulos HESPER e da grelha de observação mostraram ainda que um formulário pode passar na validação sintáctica e continuar a conter erros semânticos. As lições demonstram que a robustez de um sistema deste tipo depende sobretudo de uma arquitectura lógica unidireccional, identificadores estáveis, regras transparentes, validação incremental e testes no ambiente real de recolha.
 
 **Palavras-chave:** KoboToolbox; XLSForm; RRM; alertas humanitários; gestão de informação; pontuação de gravidade; `pulldata()`; repeat groups; dados externos; controlo de qualidade.
 
@@ -244,6 +245,22 @@ and
 
 Esta regra permite até três obstáculos reais, mas obriga `none_observed` e `unknown` a serem seleccionados sozinhos.
 
+Uma forma mais directa, aplicável quando as opções exclusivas são `none`, `dk` e `pnta`, é:
+
+```text
+count-selected(.) <= 3
+and not(
+  (
+    selected(., 'none')
+    or selected(., 'dk')
+    or selected(., 'pnta')
+  )
+  and count-selected(.) > 1
+)
+```
+
+O operador lógico é importante. Uma expressão com `or`, como `count-selected(.) >= 1 or ...`, pode aceitar combinações contraditórias porque basta que uma das condições seja verdadeira. A validação deve ser testada com combinações válidas e inválidas, não apenas visualmente revista.
+
 ### Pelo menos uma opção
 
 ```text
@@ -444,7 +461,107 @@ Sequência de teste recomendada:
 12. validar no KoboCollect, online e offline;
 13. realizar piloto com enumeradores.
 
-## 16. Recomendações para produção
+## 16. Lição 14 — Passar no ODK Validate não garante coerência operacional
+
+As revisões finais das entrevistas comunitárias e da grelha de observação mostraram uma diferença essencial entre **validade sintáctica** e **validade semântica**. O ODK Validate detecta expressões mal formadas, referências inexistentes e alguns ciclos, mas não consegue determinar se uma pergunta aparece no momento certo ou se a regra corresponde ao significado operacional pretendido.
+
+### O tipo da pergunta determina a expressão
+
+Uma variável `text` não deve ser tratada como uma escolha. No módulo HESPER, `hesper_other` guardava texto livre, mas aparecia numa fórmula como:
+
+```text
+selected(${hesper_other}, 'serious_problem')
+```
+
+A verificação correcta é:
+
+```text
+string-length(normalize-space(${hesper_other})) > 0
+```
+
+Da mesma forma, uma pergunta `select_one` não precisa de `count-selected()` para garantir exclusividade. `required=TRUE` assegura uma resposta quando a pergunta está visível, enquanto a comparação deve usar directamente o valor:
+
+```text
+${ds_plans_timeline} = 'within_one_month'
+```
+
+### As prioridades devem depender do número de problemas elegíveis
+
+As três prioridades HESPER eram inicialmente apresentadas quando existia apenas um problema sério. A solução foi calcular primeiro o número de problemas elegíveis e aplicar limiares diferentes:
+
+| Pergunta | Condição de relevância |
+|---|---|
+| Primeira prioridade | `${hesper_serious_count} >= 1` |
+| Segunda prioridade | `${hesper_serious_count} >= 2` |
+| Terceira prioridade | `${hesper_serious_count} >= 3` |
+
+Além de melhorar a experiência do enumerador, esta regra impede prioridades vazias ou duplicadas. As opções da segunda e terceira prioridades devem também excluir as escolhas já realizadas.
+
+### `choice_filter` é específico da lista utilizada
+
+Um filtro construído para a lista `serious_problem` foi aplicado por engano a uma pergunta que utilizava `priority_support`. Embora a expressão fosse tecnicamente válida, as opções eram ocultadas de forma incorrecta. A regra adoptada foi verificar sempre, em conjunto:
+
+1. o `list_name` declarado em `type`;
+2. as colunas existentes nessa lista na folha `choices`;
+3. os nomes usados no `choice_filter`;
+4. pelo menos um cenário em que cada opção deve aparecer.
+
+Quando a lista de apoio já contém todas as opções válidas, o filtro deve ficar vazio.
+
+### Perguntas de detalhe precisam de uma porta de entrada
+
+Na grelha de observação, perguntas sobre mercados, unidades sanitárias e espaços educativos eram obrigatórias mesmo quando nenhum serviço tinha sido observado. A correcção foi condicionar os blocos de detalhe:
+
+```text
+${market_observed} = 'yes'
+${health_facility_observed} = 'yes'
+${education_facility_observed} = 'yes'
+```
+
+É preferível aplicar a condição a um subgrupo que contenha todos os detalhes. Isto reduz repetição e evita que uma nova pergunta seja adicionada sem a relevância necessária.
+
+### Contagens devem admitir “não observado” e “não foi possível avaliar”
+
+No módulo de pontos de água, as contagens eram obrigatórias mesmo quando o observador indicava que não conseguia avaliar os pontos. O fluxo revisto tornou a pergunta de triagem obrigatória e apresentou as contagens apenas após uma resposta afirmativa:
+
+```text
+water_points_observed: required=TRUE
+
+water_points_present_count relevant:
+${water_points_observed} = 'yes'
+
+water_points_assessed_count relevant:
+${water_points_observed} = 'yes'
+and ${water_points_present_count} >= 1
+```
+
+A restrição garante coerência entre as duas contagens:
+
+```text
+. >= 1 and . <= ${water_points_present_count}
+```
+
+Assim, `no`, `unknown` e `not_able_to_assess` seguem um caminho válido sem exigir um número inventado.
+
+### Nomes internos, labels e traduções fazem parte da validação
+
+Uma lista continha a opção `one_observed`, enquanto a restrição procurava `none_observed`. Noutra lista, existia um campo “Other, specify”, mas não existia a opção `other`. Estes casos confirmam que a revisão deve comparar sistematicamente:
+
+- nomes usados em `selected()` com os `name` da folha `choices`;
+- opções `other` com os respectivos campos de especificação;
+- labels em inglês e português;
+- texto da pergunta com o sector correcto;
+- `required`, `relevant` e `constraint` como uma única regra lógica.
+
+Uma tradução vazia não quebra necessariamente o XForm, mas quebra a experiência bilingue. Por isso, a completude linguística deve fazer parte do controlo de qualidade antes da implementação.
+
+### Resultados pós-agregação não pertencem ao cálculo da entrevista
+
+Outputs como a proporção comunitária de indicadores em gravidade 4/4+, scores sectoriais, drivers e mensagens-chave dependem da agregação de vários informadores-chave. Não devem ser calculados dentro de uma submissão individual do Kobo. O formulário recolhe os indicadores e preserva a chave de ligação; o script de análise agrega por alerta e comunidade, exclui `dk/pnta`, calcula numeradores e denominadores e documenta a confiança do resultado.
+
+Esta separação evita apresentar um resultado individual como se fosse uma conclusão comunitária.
+
+## 17. Recomendações para produção
 
 ### Manter uma fonte controlada de alertas activos
 
@@ -466,7 +583,7 @@ Um dicionário deve registar variável, tipo, definição, opções, cálculo, d
 
 Pontuações e categorias precisam de revisão quando existem fontes contraditórias, caseload incerto, risco de duplicação, informação sensível ou mudanças após a avaliação.
 
-## 17. Limitações
+## 18. Limitações
 
 A utilização de CSV externo introduz uma etapa de manutenção. Novos alertas só aparecem depois de actualizar, carregar e sincronizar o ficheiro.
 
@@ -481,10 +598,10 @@ Outras limitações:
 
 Quando operacionalmente adequado, integrações dinâmicas entre projectos podem reduzir a manutenção manual. Ainda assim, o CSV continua útil para controlar a lista activa e preparar labels legíveis.
 
-## 18. Conclusão
+## 19. Conclusão
 
 KoboToolbox e XLSForm podem sustentar um fluxo sofisticado de gestão de alertas, pontuação, entrevistas e observação directa. O valor do sistema não está apenas nas fórmulas, mas na existência de uma arquitectura comum, uma chave estável e regras compreensíveis.
 
-As maiores dificuldades estiveram nas relações entre variáveis: identificadores instáveis, dependências circulares, diferenças entre códigos e labels, inconsistências com ficheiros externos, referências em repeats e combinações contraditórias em perguntas de múltipla escolha.
+As maiores dificuldades estiveram nas relações entre variáveis: identificadores instáveis, dependências circulares, diferenças entre códigos e labels, inconsistências com ficheiros externos, referências em repeats, filtros incompatíveis com as listas, perguntas obrigatórias fora do seu contexto e combinações contraditórias em perguntas de múltipla escolha.
 
 A principal lição é que **a automação deve tornar a análise mais consistente e rápida, sem esconder as regras nem substituir a verificação humana**. Um bom sistema não é apenas um formulário que passa na validação: é uma arquitectura de dados compreensível, auditável, testada e alinhada com o processo operacional que pretende apoiar.
