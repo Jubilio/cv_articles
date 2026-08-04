@@ -6,6 +6,12 @@ description: >
 ---
 # Bem-vindo ao Meu Portefólio
 
+```{image} img/portfolio_banner.jpg
+:alt: Banner — GIS, Remote Sensing e Análise Humanitária em Moçambique
+:width: 100%
+:class: hero-banner
+```
+
 ```{image} img/Perfile_Mausse.png
 :alt: Jubílio Filiano Maússe
 :width: 180px
