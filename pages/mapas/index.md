@@ -17,11 +17,4 @@ Mapa resultante do modelo AHP multicritério para identificar zonas favoráveis 
 [Ver Mapa e Detalhes](mueda_groundwater.md)
 :::
 
-:::{card} Análise RRM - Cabo Delgado
-Exemplo de mapeamento de apoio a missões de avaliação rápida de necessidades (RNA/RRM) em Cabo Delgado.
-
-+++
-[Ver Mapa e Detalhes](cabo_delgado_rrm.md)
-:::
-
 ::::

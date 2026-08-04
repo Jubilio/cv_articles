@@ -35,13 +35,10 @@ project:
       children:
         - file: pages/mapas/index.md
         - file: pages/mapas/mueda_groundwater.md
-        - file: pages/mapas/cabo_delgado_rrm.md
     - title: Tutoriais Técnicos
       children:
         - file: pages/tutoriais/index.md
-        - file: pages/tutoriais/arcgis.md
         - file: pages/tutoriais/qgis.md
-        - file: pages/tutoriais/r_kobo.md
     - title: Projectos
       children:
         - file: pages/projectos/portfolio.md

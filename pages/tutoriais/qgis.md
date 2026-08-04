@@ -16,8 +16,3 @@ Relato técnico sobre a transformação do manual num **Quarto Book** pesquisáv
 
 [Ler o artigo completo →](../artigos/quarto_qgis_plugin_manual.md)
 
-## Outros conteúdos em preparação
-
-1. **Integração com Google Earth Engine (Plugin GEE):** como correr scripts GEE directamente na interface do QGIS.
-2. **Estilos dinâmicos (Data-defined Overrides):** como criar mapas temáticos avançados usando expressões e regras lógicas para alterar símbolos com base em múltiplos atributos.
-3. **Cálculo de áreas e geometrias (Field Calculator):** truques com expressões regulares e funções geométricas avançadas no QGIS.
