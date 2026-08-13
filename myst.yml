@@ -28,6 +28,7 @@ project:
     - title: Artigos
       children:
         - file: pages/artigos/index.md
+        - file: pages/artigos/hesper_wgss_r_analysis_pipeline.md
         - file: pages/artigos/kobo_xlsform_rrm_licoes_aprendidas.md
         - file: pages/artigos/quarto_qgis_plugin_manual.md
         - file: pages/artigos/groundwater_mueda.md
