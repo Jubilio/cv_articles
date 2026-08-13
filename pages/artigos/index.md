@@ -10,6 +10,15 @@ Bem-vindo à secção de artigos. Aqui partilho manuscritos, relatórios técnic
 
 ::::{grid} 1 1 2 2
 
+:::{card} Do XLSForm ao resultado: fluxo reproduzível para dados HESPER e Washington Group em R
+**Ano:** 2026 | **Área:** Análise Humanitária, R & Gestão de Informação
+
+Estudo de caso sobre limpeza, indicadores WGSS, validação de prioridades HESPER, DAP descritivo e apresentação de resultados no padrão IMPACT.
+
++++
+[Ler o Artigo](hesper_wgss_r_analysis_pipeline.md)
+:::
+
 :::{card} Do alerta à entrevista comunitária: lições aprendidas na construção de um sistema RRM com KoboToolbox e XLSForm
 **Ano:** 2026 | **Área:** Gestão de Informação Humanitária & Desenvolvimento de Formulários
 
