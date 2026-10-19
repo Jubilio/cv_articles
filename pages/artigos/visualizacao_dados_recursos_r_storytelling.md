@@ -176,5 +176,3 @@ Os livros podem acompanhar momentos diferentes desse processo: os fundamentos aj
 5. Wilke, C. O. [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/).
 6. Healy, K. [Data Visualization: A Practical Introduction](https://socviz.co/).
 7. Harrison, E.; Pius, R. [R for Health Data Science](https://argoshare.is.ed.ac.uk/healthyr_book/).
-
-*Recursos consultados em 19 de Outubro de 2026. As descrições são sínteses; o roteiro e o exercício são propostas do autor. Consulte as condições de utilização de cada obra antes de reutilizar figuras ou outros materiais.*
