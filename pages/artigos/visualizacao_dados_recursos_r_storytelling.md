@@ -167,6 +167,16 @@ Na revisão, vale confirmar se unidades e períodos estão explícitos, se ausê
 
 Os livros podem acompanhar momentos diferentes desse processo: os fundamentos ajudam a escolher, os exemplos ensinam a construir e os recursos de comunicação ajudam a apresentar. A prática consiste em fazer essas escolhas de forma consciente e conseguir explicá-las a quem vai utilizar a informação.
 
+## Recurso complementar: modelação estatística com Stata e R
+
+O curso [Statistical Modelling with Stata](https://personalpages.manchester.ac.uk/staff/Mark.Lunt/stats_course.html), de **Mark Lunt, da Universidade de Manchester**, complementa este roteiro com fundamentos de análise estatística. Foi originalmente preparado para ensinar investigadores a analisar dados em Stata; os exercícios práticos foram também adaptados para R por **David Selby** [8].
+
+Os temas incluem resumos gráficos e numéricos, amostragem, intervalos de confiança, testes de hipóteses, modelos lineares, regressão logística, resultados categóricos, modelos de contagem e análise de sobrevivência. A página reúne slides, exercícios, soluções e conjuntos de dados. Os autores indicam que a adaptação entre Stata e R continua em desenvolvimento.
+
+**Como utilizar neste roteiro:** começar pelas sessões sobre resumos de dados e amostragem, relacionando a escolha dos gráficos com a interpretação das estimativas e da incerteza. Depois, avançar para os modelos adequados à pergunta analítica e ao tipo de variável.
+
+**Aplicação proposta:** reproduzir um exercício em R e apresentar o resultado com um gráfico, uma interpretação curta e uma explicação dos pressupostos utilizados. Para aplicar a avaliações humanitárias, verificar adicionalmente como o desenho amostral deve ser considerado na análise.
+
 ## Referências e recursos
 
 1. Wickham, H.; Navarro, D.; Pedersen, T. L. [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/).
@@ -176,3 +186,4 @@ Os livros podem acompanhar momentos diferentes desse processo: os fundamentos aj
 5. Wilke, C. O. [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/).
 6. Healy, K. [Data Visualization: A Practical Introduction](https://socviz.co/).
 7. Harrison, E.; Pius, R. [R for Health Data Science](https://argoshare.is.ed.ac.uk/healthyr_book/).
+8. Lunt, M. [Statistical Modelling with Stata — exercícios também disponíveis em R](https://personalpages.manchester.ac.uk/staff/Mark.Lunt/stats_course.html).
