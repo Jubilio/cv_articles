@@ -177,6 +177,4 @@ Os livros podem acompanhar momentos diferentes desse processo: os fundamentos aj
 6. Healy, K. [Data Visualization: A Practical Introduction](https://socviz.co/).
 7. Harrison, E.; Pius, R. [R for Health Data Science](https://argoshare.is.ed.ac.uk/healthyr_book/).
 
-**Ligação adicional indicada para este artigo:** [publicação de Cedric Scherer no X](https://x.com/CedScherer/status/1441126976870252548). O conteúdo desta publicação não pôde ser verificado durante a preparação do texto; a ligação fica registada para consulta, sem servir de base às descrições acima.
-
 *Recursos consultados em 19 de Outubro de 2026. As descrições são sínteses; o roteiro e o exercício são propostas do autor. Consulte as condições de utilização de cada obra antes de reutilizar figuras ou outros materiais.*
