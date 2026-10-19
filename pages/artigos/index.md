@@ -10,6 +10,15 @@ Bem-vindo à secção de artigos. Aqui partilho manuscritos, relatórios técnic
 
 ::::{grid} 1 1 2 2
 
+:::{card} Da análise à comunicação: um roteiro para aprender visualização de dados
+**Ano:** 2026 | **Área:** Visualização de Dados, R & Storytelling
+
+Sete recursos para desenvolver competências de visualização, com comparação dos livros, sugestões de leitura e um exercício em R aplicado a dados humanitários fictícios.
+
++++
+[Ler o Artigo](visualizacao_dados_recursos_r_storytelling.md)
+:::
+
 :::{card} Do XLSForm ao resultado: fluxo reproduzível para dados HESPER e Washington Group em R
 **Ano:** 2026 | **Área:** Análise Humanitária, R & Gestão de Informação
 
